@@ -4,7 +4,7 @@ The user's rulings on scope, style and trade-offs, newest last. Read before aski
 decision replaces one, mark the old one "replaced by D<n>" instead of deleting it. Binding term spellings live in
 `glossary.md`; this file holds the why.
 
-D1-D3, D5 and D6 come from the owner's standing answers for one-shot runs. D4 is the skill's default. D7 and D8 are
+D1-D3, D5 and D6 come from the owner's standing answers for one-shot runs. D4 is the skill's default. D7, D8 and D9 are
 defaults this run chose, so the owner can overrule them.
 
 | # | Date | Question | Options offered | Decision and reason |
@@ -17,3 +17,4 @@ defaults this run chose, so the owner can overrule them.
 | D6 | 2026-11-06 | Specs and plans | need approval, pre-approved | Pre-approved. Owner's standing answer. |
 | D7 | 2026-11-06 | FMV dialogue: spoken Japanese with no subtitles carries the story | leave untranslated; burn English subtitles into the STR files | Burn in subtitles, if re-encoding fits each file's sector count. **Agent default, not an owner ruling:** the story is otherwise lost to English players. Noted in `docs/status.md` under "Waiting on the user". |
 | D8 | 2026-11-06 | Verbatim song lyrics (17 cards, FMV song captions) in the repo | commit like other script text; keep local | Keep them out of git: `work/script/lyrics_jp.tsv` (gitignored, re-readable from the cards) and no text on `song` rows in `script/fmv/`. **Agent default, not an owner ruling:** these are third-party songs and the repo may go public, while line rects are all the build needs from git. How the English lyrics ship is still open for phase 6. Noted in `docs/status.md` under "Waiting on the user". |
+| D9 | 2026-11-06 | Fonts, per label class | one font throughout; a font per class | Bangers for display labels (menu, card, banner, stamp, HUD); Jersey 10 for FMV subtitles at 20 px and for small labels; Jersey 15 for the credit roll, because Jersey 10 at 20 px is wider and credit VRAM is short. All OFL. Table: `CLASSES` in `tools/gfx.py`. **Agent default, not an owner ruling:** Bangers matches the show's comic look, and the pixel fonts stay crisp without antialiasing. Noted in `docs/status.md` under "Waiting on the user". |

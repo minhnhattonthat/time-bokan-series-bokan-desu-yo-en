@@ -35,11 +35,13 @@ def scene_names():
     return names
 
 
-def run(scene, rom, out, god, states):
+def run(scene, rom, out, god, states, prims=False):
     d = os.path.join(out, scene)
     frames = LONG.get(scene, 20000)
     cmd = [sys.executable, "-X", "utf8", os.path.join(SKILL, "scripts", "emu.py"), rom, "--out", d, "--frames", str(frames),
            "--timeout", "1200", "--script", WARP, "--script", SCENES, "--var", f"SCENE='{scene}'"]
+    if prims:
+        cmd += ["--script", os.path.join(ROOT, "tools", "debug", "primdump.lua")]
     if scene not in NO_SMOKE:
         cmd.append("--smoke")
     if god:
@@ -62,12 +64,13 @@ def main():
     ap.add_argument("--out", default=os.path.join(ROOT, "work", "qa", "warp"))
     ap.add_argument("--god", action="store_true")
     ap.add_argument("--states", action="store_true")
+    ap.add_argument("--prims", action="store_true", help="dump RAM and VRAM at every shot, for tools/prims.py")
     ap.add_argument("scenes", nargs="*")
     a = ap.parse_args()
     names = a.scenes or scene_names()
     bad = 0
     with cf.ThreadPoolExecutor(a.jobs) as ex:
-        for scene, rc, last, err in ex.map(lambda s: run(s, a.rom, a.out, a.god, a.states), names):
+        for scene, rc, last, err in ex.map(lambda s: run(s, a.rom, a.out, a.god, a.states, a.prims), names):
             print(f"{'ok  ' if rc == 0 else 'FAIL'} {scene:16} rc={rc} {last} {err}")
             bad += rc != 0
     print(f"{len(names) - bad}/{len(names)} scenes ok")

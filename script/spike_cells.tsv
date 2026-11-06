@@ -1,0 +1,5 @@
+addr	part	u	v	dx	dy	w	h	sx	sy	note
+8015DDA4	1	96	80	+0	-8	64	16	4096	4096	line 1 name: one strip over two parts
+8015DDA4	2	160	80	+64	-8	40	16	4096	4096
+8015DDCC	1	8	96	+0	-8	64	16	4096	4096	line 2 name: same; a 2x part scale was tried here and the game ignores it
+8015DDCC	2	72	96	+64	-8	40	16	4096	4096

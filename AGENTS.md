@@ -12,6 +12,8 @@ Skill: translate-retro-game (Claude Code: plugin, enabled in .claude/settings.js
 - Warp:     `python -X utf8 tools/debug/warp_all.py [--rom CUE] [--states] [scene ...]` (cold boot to any scene, shots in `work/qa/warp/<scene>/`; scene list `tools/debug/scenes.lua`, addresses `docs/re/state.md`)
 - Script:   `python -X utf8 tools/gfx_script.py sheet work/x OUT.png` (crops of `script/graphics.tsv` rows), `tools/lyric_lines.py work/x script/lyric_lines.tsv`, `tools/fmv_transcribe.py work/recon/str work/fmv` (Whisper draft and frame sheets; needs `tools/str_frames.py` output), `tools/tim_ruler.py` (zoomed TIM with grid)
 - Build:    `python -X utf8 tools/build.py` (disc in `build/`; no edits yet, so it equals the dump, held by `tests/test_build.py`)
+- Marker:   `python -X utf8 tools/build.py --marker` (`build/marker/`: row numbers on every rect, test line in every movie; about 15 min) then `tools/debug/warp_all.py --rom build/marker/...cue --out work/qa/marker`. `--spike` letters `script/spike.tsv` instead (`build/spike/`, no movies).
+- Budgets:  `tools/debug/warp_all.py --prims --out work/qa/prim [scene ...]`, `tools/prims.py rows work/qa/prim/* --out work/recon/prims_rows.tsv`, `tools/budgets.py` (`script/budgets.tsv`). `tools/credits.py dump` is the roll by line; `tools/cells.py scan FILE` lists cell groups.
 - Release: not written yet (phase 9); add it here when it exists. Never publish without the user.
 - Clean:    `python -X utf8 tools/clean.py` (published projects: lists rebuildable/downloadable files; `--yes` deletes)
 

@@ -1,0 +1,70 @@
+id	en	class
+title.normal	Normal Game		
+title.special	Special Game		
+title.options	Options		
+title.copy	Tatsunoko Pro	sprite	
+title.btn_select	Pick		
+title.btn_ok	OK		
+title.btn_back	Back		
+title.hint_select	Move	tag	
+title.hint_ok	OK	tag	
+title.hint_back1	Back	tag	
+title.hint_back2	Back	tag	
+title.desc1	Unleash evil	tag	
+title.desc3	Good for new	tag	
+opt.buttons	Controls		
+opt.credit	Credits		
+opt.sound	Sound		
+opt.voice	Voice		
+opt.extras	Extras		
+cfg.rolling	Rolling		
+cfg.shot1	Shot		
+cfg.shot2	Shot		
+cfg.shot3	Shot		
+cfg.shot4	Shot		
+cfg.bomb1	Skull Bomb		
+cfg.bomb2	Skull Bomb		
+cfg.bomb3	Skull Bomb		
+cfg.bomb4	Skull Bomb		
+cfg.big1	Big Mecha		
+cfg.big2	Big Mecha		
+cfg.big3	Big Mecha		
+cfg.big4	Big Mecha		
+tag.doron	Doronjo Car		
+tag.boya	Boyacky Car		
+tag.tonzr	Tonzura Car		
+tag.denden	Denden Mech		
+tag.andoro	Andromedama		
+tag.gaikotu	Gaikotts		
+tag.rakuda	Time Rakuda		
+tag.syareko	Sharekobe Mech		
+plate.doron	Doronjo Car		
+plate.boya	Boyacky Car		
+card.st1	The Hawk Returns,|Koron!		
+card.st2	Doronbow in the|Sleepless Forest,|Zendaman!		
+go.fin1	THE		
+go.fin2	END		
+go.fin3	!		
+hud.gameover	Game Over		
+end.head.cast	Voice Cast		
+end.role.song	Bokan to Ippatsu!		
+end.role.doronjo	Doronjo		8,0,64,16
+end.role.boyacky	Boyacky		72,0,72,16
+end.role.tonzura	Tonzura		144,0,64,16
+end.name.ohara	Noriko Ohara		96,80,104,16
+end.name.yanami	Joji Yanami		8,96,104,16
+sprite.sign1	Private Property		
+extra.m00	ABCDEFGHIJKLMNOP	hud	
+extra.m01	QRSTUVWXYZabcdefghijkl	hud	
+extra.m02	mnopqrstuvwxyz0123456	hud	
+extra.m03	789!"#%&'*+,-./:;<=>?@	hud	
+extra.m04	[\]^	hud	
+extra.m05	_`{}~  x	hud	
+extra.m06	end	hud	
+extra.m08	ABCDEFGHIJKLMNOPQRS	cells	
+extra.m09	TUVWXY	cells	
+extra.m10	Zabcdefghijklmno	cells	
+extra.m11	pqrstuvwxyz01234567	cells	
+extra.m12	89!"#$%&'()*+,-./:;<=	cells	
+extra.m13	>?@[\]^_`{}~  x	cells	
+extra.m14	end	cells	

@@ -16,3 +16,4 @@ Addresses are for the dump in `rom.sha1` unless a note says otherwise.
 | [state.md](state.md) | game state variables, main states, story script, title sub-states, debug tool | verified except where marked |
 | [text.md](text.md) | no text encoding: why every Japanese string is a graphic or a video frame | verified by scan; draw path is a guess until phase 5 |
 | [graphics.md](graphics.md) | graphics-text survey: every Japanese element and FMV caption | static sweep complete; tour check in phase 8 |
+| [cells.md](cells.md) | sprite cells, GPU quads, credit strips, marker tour, font spike, width gate, FMV burn | verified except where marked |
