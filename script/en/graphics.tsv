@@ -100,10 +100,10 @@ card.st4	Enter with a Bang!|The Original|Time Mecha, Peccha!		Perasuke's tic
 card.st5	Justice's Trump Card!|Yatterwan FZ, Koron!
 card.stf	Shock Showdown!|Dokurobey, Ruler|of the Shadows!
 card.sts	Racing to Battle:|Odate-Buta, Koron!
-sprite.ikari	MAD		怒
+sprite.ikari	MAD	head	怒
 sprite.harawata	Guts		on a monitor
-sprite.itadaki1	Itadakiman
-sprite.itadaki2	Itadakiman
-sprite.itadaki3	Itadakiman
+sprite.itadaki1	Itadakiman	tag
+sprite.itadaki2	Itadakiman	tag
+sprite.itadaki3	Itadakiman	tag
 sprite.sign1	Private! Keep Out
 sprite.sign2	Doron Company		reading uncertain

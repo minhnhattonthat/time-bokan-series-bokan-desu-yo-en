@@ -14,7 +14,7 @@ title.desc7	SUBDATA/TITLE3	0	128	112	16	cells	おすすめよーん
 title.desc8	SUBDATA/TITLE3	0	144	112	16	cells	ドクロベェ暗躍
 title.desc9	SUBDATA/TITLE3	0	160	96	16	cells	チャレンジ!
 title.desc10	SUBDATA/TITLE3	0	176	80	16	cells	おこのみに
-title.desc11	SUBDATA/TITLE3	0	192	104	16	cells	変えられます!
+title.desc11	SUBDATA/TITLE3	0	192	108	16	cells	変えられます!
 title.hint_select	SUBDATA/TITLE3	0	208	32	16	button	選ぶ	plain strip
 title.hint_ok	SUBDATA/TITLE3	32	208	32	16	button	決定	plain strip
 title.hint_back1	SUBDATA/TITLE3	64	208	32	16	button	戻る	plain strip
@@ -31,7 +31,7 @@ opt.sound	SUBDATA/OPTI0	23	70	66	20	menu	サウンド
 opt.voice	SUBDATA/OPTI0	23	102	48	20	menu	ボイス
 opt.extras	SUBDATA/OPTI0	23	134	54	20	menu	おまけ
 opt.player1	SUBDATA/OPTI0	166	82	56	14	menu	1プレイヤー
-opt.pad	SUBDATA/OPTI0	26	166	40	15	menu	パット	drawn over the controller outline
+opt.pad	SUBDATA/OPTI0	24	166	44	15	menu	パット	drawn over the controller outline
 cfg.rolling	SUBDATA/CONFIG01	0	176	80	16	menu	ローリング
 cfg.big1	SUBDATA/CONFIG02	0	0	64	16	menu	巨大メカ	state 1
 cfg.big2	SUBDATA/CONFIG02	80	0	64	16	menu	巨大メカ	state 2
@@ -48,7 +48,7 @@ cfg.shot4	SUBDATA/CONFIG02	0	112	56	16	menu	ショット	state 4
 cfg.back	SUBDATA/CONFIG02	95	88	33	16	button	戻る	hugs the word: cross mark and box stay; EXIT beside it is English
 cfg.select	SUBDATA/CONFIG02	8	136	34	16	button	選ぶ	hugs the word: d-pad mark and box stay
 cfg.ok	SUBDATA/CONFIG02	8	168	32	16	button	決定	hugs the word: circle mark and box stay
-cfg.stamp1	SUBDATA/CONFIG02	163	66	84	77	stamp	決	large stamp, flat
+cfg.stamp1	SUBDATA/CONFIG02	163	66	84	78	stamp	決	large stamp, flat
 cfg.stamp2	SUBDATA/CONFIG02	163	150	84	81	stamp	決	large stamp, shadow
 cfg.stamp3	SUBDATA/CONFIG02	74	151	86	89	stamp	決	large stamp, 3D
 plate.gaikotu	SUBDATA/MARK03	138	4	108	23	plate	ガイコッツ	ship zoom plate, cell 127x31 at 128,0; engraved, palette 3
@@ -79,7 +79,7 @@ extra.m13	OPTI/OMAKE1	0	208	112	16	menu	善玉の直接攻撃
 extra.m14	OPTI/OMAKE1	0	224	112	16	menu	おしおきだベー
 hud.gameover	DATA/STANDARD	72	154	64	14	hud	ゲームオーバー
 hud.danger	DATA/STANDARD	126	68	20	22	hud	危	plain
-hud.danger_c	DATA/STANDARD	154	66	28	26	hud	危	in a circle
+hud.danger_c	DATA/STANDARD	154	66	28	27	hud	危	in a circle
 go.game	DATA/GO_S0	160	0	64	160	banner	ゲーム	large, stacked; rect also holds go.over_o, whose bbox overlaps the ゲ stem
 go.over_o	DATA/GO_S0	186	62	38	30	banner	オ	first kana of オーバー, packed beside ゲ
 go.over	DATA/GO_S0	0	222	64	24	banner	ーバー	rest of オーバー, see go.over_o
@@ -97,19 +97,19 @@ tag.rakuda	DATA/RAKUDA	14	240	51	16	tag	タイムラクーダ
 tag.syareko	DATA/SYAREKO	10	240	60	16	tag	シャレコーベメカ
 tag.sya_bagi	DATA/SYA_BAGI	10	240	60	16	tag	シャレコーベバギー
 card.st1	SUBDATA/TAIM_ST1	3	98	250	60	card	鷹は舞い戻っただコロン
-card.st2	SUBDATA/TAIM_ST2	3	84	250	90	card	眠らぬ森のドロンボーだよゼンダマン
+card.st2	SUBDATA/TAIM_ST2	3	82	250	92	card	眠らぬ森のドロンボーだよゼンダマン
 card.st3	SUBDATA/TAIM_ST3	3	99	250	60	card	巨大勇者と異次元ランデブー!
-card.st4	SUBDATA/TAIM_ST4	3	84	250	90	card	ボカンと登場! 元祖タイムメカだペッチャ
-card.st5	SUBDATA/TAIM_ST5	3	84	250	90	card	正義の切り札! ヤッターワンFZだコロン
-card.stf	SUBDATA/TAIM_STF	2	84	251	90	card	驚き決戦! 影の支配者ドクロベェ
-card.sts	SUBDATA/TAIM_STS	3	84	250	90	card	戦場に駆ける、おだてブタだコロン!
+card.st4	SUBDATA/TAIM_ST4	3	82	250	92	card	ボカンと登場! 元祖タイムメカだペッチャ
+card.st5	SUBDATA/TAIM_ST5	3	82	250	92	card	正義の切り札! ヤッターワンFZだコロン
+card.stf	SUBDATA/TAIM_STF	2	82	251	92	card	驚き決戦! 影の支配者ドクロベェ
+card.sts	SUBDATA/TAIM_STS	3	82	250	92	card	戦場に駆ける、おだてブタだコロン!
 sprite.ikari	STAGE3/DATA/ST3_S2F	0	166	32	36	sprite	怒	not yet seen in game
 sprite.harawata	STAGE3/DATA/ST3_S5D	176	12	56	16	sprite	はらわた	on a monitor; not yet seen in game
-sprite.itadaki1	STAGE4/BG/ST4_SB0	190	106	66	14	sprite	イタだきまん	red name; seen on a walking enemy
+sprite.itadaki1	STAGE4/BG/ST4_SB0	184	104	72	16	sprite	イタだきまん	red name; seen on a walking enemy
 sprite.itadaki2	STAGE4/BG/ST4_SB0	96	240	72	16	sprite	いただきまん
 sprite.itadaki3	STAGE4/BG/ST4_SB0	184	240	72	16	sprite	イタだきまん
-sprite.sign1	STAGE7/BG/ST7_SA0	98	108	62	8	sprite	私有地・立入禁止	sign at the start of the final stage
-sprite.sign2	STAGE7/BG/ST7_SA0	116	116	44	7	sprite	ドロンカンパニー	dark line under sign1; reading uncertain
+sprite.sign1	STAGE7/BG/ST7_SA0	97	107	62	9	sprite	私有地・立入禁止	sign at the start of the final stage
+sprite.sign2	STAGE7/BG/ST7_SA0	97	116	62	6	sprite	ドロンカンパニー	dark line under sign1; reading uncertain
 scribble.st2c0	STAGE2/BG/ST2_C0	2	33	28	30	scribble	アコリ	dev scribble on a spare tile, reading uncertain; confirm unused in phase 8
 end.role.doronjo	DATA/END_4	8	0	56	16	credit	ドロンジョ	cast role; rects are by eye, exact spans come from S10OVER in phase 5
 end.role.boyacky	DATA/END_4	72	0	62	16	credit	ボヤッキー	

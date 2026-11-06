@@ -4,6 +4,7 @@ Row number = line of graphics.tsv, counting from 1 under the header; `python too
 lines are marked as card.line. Pixels only ever change inside a row's rect, through tim.with_pixels, so the STP bit
 and the CLUT stay untouched."""
 import sys
+from collections import namedtuple
 from pathlib import Path
 
 import numpy as np
@@ -182,9 +183,41 @@ def sampled_inks(px, clut, margin=None, stone=False, flat=False):
     return bg, fill, mode(rest) if rest.size else int(fill[0])
 
 
+Inks = namedtuple("Inks", "fill line clear bg", defaults=(True, None))
+# Rows whose sampled inks fail. hud.gameover: the fill alternates 10 and 15 by row, which stripes the letters.
+# sel.repair: lettered on the X that stamp_x redrew, so nothing is cleared. Thin one-ink kana and kanji (hints, tags,
+# names, the sign) give no strokes to sample, and a packed strip's or speckled sign's margin no background.
+ROW_INKS = {"hud.gameover": Inks(15, 10), "sel.repair": Inks(15, 1, False),
+            "title.hint_select": Inks(15, 2, bg=2), "title.hint_ok": Inks(15, 2, bg=2),
+            "title.hint_back1": Inks(15, 2, bg=2), "title.hint_back2": Inks(15, 2, bg=2),
+            "opt.player1": Inks(15, 7), "opt.pad": Inks(15, 2),
+            "sprite.itadaki1": Inks(12, 11), "sprite.itadaki2": Inks(12, 11), "sprite.itadaki3": Inks(12, 11),
+            "sprite.sign1": Inks(3, 14, bg=14), "sprite.sign2": Inks(11, 14, bg=14)}
+TAG_INKS = Inks(15, 1)  # ship name tags: white on a dark outline in every file
+
+
+def stamp_x(data):
+    """SELMAIN with 整備中 gone and the X it lay on redrawn. Each arm steps 1 px a row and the art mirrors about y 131.5,
+    so clean row 121 gives every row the kanji covered. Only the row's own rect changes."""
+    t = tim.parse(data)
+    px = tim_px(t, data)
+    x, y, w, h = next((r.x, r.y, r.w, r.h) for r in gfx_script.rows() if r.id == "sel.repair")
+    top = 121
+    drawn = np.zeros((y + h, px.shape[1]), dtype=px.dtype)
+    for row in range(y, 132):
+        k = row - top
+        drawn[row, 119:122] = px[top, 119:122]
+        drawn[row, 157:160] = px[top, 157:160]
+        drawn[row, 124 + k:134 + k] = px[top, 124:134]
+        drawn[row, 145 - k:155 - k] = px[top, 145:155]
+        drawn[263 - row] = drawn[row]
+    px[y:y + h, x:x + w] = drawn[y:y + h, x:x + w]
+    return tim.with_pixels(t, data, px.reshape(-1).tolist())
+
+
 def typeset(data, rows):
     """data (a TIM file) with each (rect, text, form, align) rect cleared and lettered. Raises ValueError on overflow:
-    English is never clipped silently."""
+    English is never clipped silently. A fifth item forces the inks: a clean rect of the original to sample, or Inks."""
     t = tim.parse(data)
     assert t and t.bpp in (4, 8), "not a CLUT TIM"
     width = pixel_width(t)
@@ -198,12 +231,18 @@ def typeset(data, rows):
             raise ValueError(f"{text!r} is {gw}x{gh} in class {form}, rect is {w}x{h}")
         margin = np.concatenate([px[y:y + h, max(x - 3, 0):x], px[y:y + h, x + w:x + w + 3]], axis=1)
         bg, fill, line = sampled_inks(px[y:y + h, x:x + w], t.clut, margin, form == "plate", form == "button")
-        if sample:  # a list whose rows must match: take the inks of one clean row of the original
+        clear = True
+        if sample and isinstance(sample[0], Inks):
+            fill, line, clear = np.full(h, sample[0].fill), sample[0].line, sample[0].clear
+            if sample[0].bg is not None:
+                bg = np.full(h, sample[0].bg)
+        elif sample:  # a list whose rows must match: take the inks of one clean row of the original
             sx, sy, sw, sh = sample[0]
             _, f2, line = sampled_inks(orig[sy:sy + sh, sx:sx + sw], t.clut)
             fill = np.full(h, f2[len(f2) // 2])
         cell = px[y:y + h, x:x + w]
-        cell[:] = bg[:, None]
+        if clear:
+            cell[:] = bg[:, None]
         oy, ox = (h - gh) // 2, 0 if align == "l" else (w - gw) // 2
         box = cell[oy:oy + gh, ox:ox + gw]
         box[halo] = line
@@ -238,12 +277,19 @@ def widened(rect, need_w, need_h, box, others):
 def english_rows():
     """{file: [(rect, text, form, align), ...]} of script/en/graphics.tsv, each rect widened to its text if needed.
     The GAME OVER banner is left to go_banner()."""
+    out = {}
+    for _, file, row in english_items():
+        out.setdefault(file, []).append(row)
+    return out
+
+
+def english_items():
+    """(row id, file, typeset row) of each row english_rows() lists."""
     import tl_check
     budgets = {b["id"]: b for b in tl_check.table(ROOT / "script" / "budgets.tsv")}
     by_id = {r.id: r for r in gfx_script.rows()}
     en = [e for e in tl_check.table(ROOT / "script" / "en" / "graphics.tsv") if e["id"] not in GO_ROWS]
     forms = {e["id"]: e["class"] or by_id[e["id"]].form for e in en}
-    out = {}
     for e in en:
         r = by_id[e["id"]]
         rect = (r.x, r.y, r.w, r.h)
@@ -254,8 +300,10 @@ def english_rows():
         row = (rect, e["en"], forms[e["id"]], "c")
         if r.id.startswith("extra."):
             row = (rect, e["en"], forms[e["id"]], "l", EXTRAS_INKS)
-        out.setdefault(r.file, []).append(row)
-    return out
+        inks = ROW_INKS.get(r.id, TAG_INKS if r.id.startswith("tag.") else None)
+        if inks:
+            row = (rect, e["en"], forms[e["id"]], "c", inks)
+        yield r.id, r.file, row
 
 
 GO_ROWS = ("go.game", "go.over_o", "go.over")
@@ -273,14 +321,16 @@ def go_banner(data):
     px = tim_px(t, data)
     x, y, w, h = 160, 0, 64, 60  # ゲ: both words take its inks, as オ's thin strokes sample in bands
     inks = sampled_inks(px[y:y + h, x:x + w], t.clut)
-    rows = (("GAME", ((160, 0, 64, 60, 0, 0), (160, 96, 64, 60, 64, 0))),
-            ("OVER", ((160, 62, 64, 30, 0, 2), (0, 224, 64, 28, 64, 4))))  # screen y 166 and 168: canvas rows 2 and 4
+    import tl_check
+    en = {e["id"]: e["en"] for e in tl_check.table(ROOT / "script" / "en" / "graphics.tsv")}
+    rows = ((en["go.game"], ((160, 0, 64, 60, 0, 0), (160, 96, 64, 60, 64, 0))),
+            (en["go.over_o"] + en["go.over"], ((160, 62, 64, 30, 0, 2), (0, 224, 64, 28, 64, 4))))  # screen y 166 and 168: canvas rows 2 and 4
     for (u, v, w, h) in ((160, 0, 64, 96), (160, 96, 64, 64), (0, 222, 64, 33)):
         px[v:v + h, u:u + w] = 0
     _, fill, line = inks
     for text, pieces in rows:
         height = max(p[3] + p[5] for p in pieces)
-        form = "gameover" if text == "GAME" else "banner"
+        form = "gameover" if text == rows[0][0] else "banner"
         ink, halo = glyphs(text, form)
         if ink.shape[1] > 128 or ink.shape[0] > height:
             raise ValueError(f"{text!r} is {ink.shape[1]}x{ink.shape[0]}, canvas 128x{height}")
@@ -331,16 +381,34 @@ def inpainted(px, mask, clut, skip):
 LYRIC_PITCH, LYRIC_GAP = 14, 15  # summary line pitch; title to first summary line
 
 
-def lyric_card(data, rects, title, lines):
+LYRIC_GROW = {"03": (2, 2, 2, 8), "06": (4, 2, 2, 2)}  # strokes past the line rects: dashes under CARD03, a stroke left of CARD06
+
+
+def lyric_area(card, rects):
+    """(x, y, w, h) a lyric card clears: its line rects, plus a margin for the glyphs' edges."""
+    x0, y0 = min(r[0] for r in rects), min(r[1] for r in rects)
+    x1, y1 = max(r[0] + r[2] for r in rects), max(r[1] + r[3] for r in rects)
+    left, top, right, bottom = LYRIC_GROW.get(card, (2, 2, 2, 2))
+    return x0 - left, y0 - top, x1 - x0 + left + right, y1 - y0 + top + bottom
+
+
+def lyric_card(data, card, rects, title, lines):
     """A lyric card with the Japanese lines painted out and the English title and summary lettered on their rows.
     rects = the card's rows of script/lyric_lines.tsv. White text with a dark halo, as the original."""
     t = tim.parse(data)
     px = tim_px(t, data)
     x0, y0 = min(r[0] for r in rects), min(r[1] for r in rects)
     x1, y1 = max(r[0] + r[2] for r in rects), max(r[1] + r[3] for r in rects)
-    area = px[y0 - 1:y1 + 1, x0 - 1:x1 + 1]
+    ax, ay, aw, ah = lyric_area(card, rects)
+    area = px[ay:ay + ah, ax:ax + aw]
     white, dark = commonest(area, t.clut, lambda s: s >= 85), commonest(area, t.clut, lambda s: s <= 9)
-    area[:] = inpainted(area, np.isin(area, (white, dark)), t.clut, (white, dark))
+    ink = np.isin(area, (white, dark))
+    mask = ink.copy()  # one px wider: the glyphs' soft edges are other indices, and stayed as specks
+    mask[1:] |= ink[:-1]
+    mask[:-1] |= ink[1:]
+    mask[:, 1:] |= ink[:, :-1]
+    mask[:, :-1] |= ink[:, 1:]
+    area[:] = inpainted(area, mask, t.clut, (white, dark))
     rows = [title] + lines
     if len(rows) > len(rects):
         raise ValueError(f"{len(rows)} lines for {len(rects)} rows")

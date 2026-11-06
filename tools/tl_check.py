@@ -65,7 +65,7 @@ def subs(movie, rows=None):
         if not r["en"]:
             continue
         first, last = src[ns[0] - 1], src[ns[-1] - 1]
-        start, end = first[0], last[1]
+        start, end = first[0], max(src[n - 1][1] for n in ns)  # a caption merged with its voice line can outlast it
         if first[2] == "song":
             end = start + SONG_SHOW
         later = [s[0] for s in src[ns[-1]:] if s[0] > start]

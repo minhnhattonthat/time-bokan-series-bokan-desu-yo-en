@@ -10,6 +10,7 @@ ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "tools"))
 import cells
 import credits
+import disc
 import fmv_burn
 import gfx
 import gfx_script
@@ -117,6 +118,52 @@ def test_sprite_packet_decodes():
 
 
 needs_rom = pytest.mark.skipif(not (ROOT / "rom" / credits.TRACK1).exists(), reason="needs the dump in rom/")
+
+
+def test_forced_inks_give_one_fill():
+    clut = struct.pack("<I4H", 12 + 32, 0, 480, 16, 1) + struct.pack("<16H", *range(16))
+    pixels = struct.pack("<I4H", 12 + 16 * 16 * 2, 320, 0, 16, 16) + bytes(range(256)) * 2
+    data = struct.pack("<II", 0x10, 8) + clut + pixels
+    t = tim.parse(data)
+    rect = (2, 2, 40, 12)
+    keep = gfx.typeset(data, [(rect, "Ok", "sprite", "c", gfx.Inks(15, 1, False))])
+    wiped = gfx.typeset(data, [(rect, "Ok", "sprite", "c", gfx.Inks(15, 1, True))])
+    a, b, c = [gfx.tim_px(t, d)[2:14, 2:42] for d in (data, keep, wiped)]
+    assert ((b == a) | (b == 15)).all()  # not cleared: only ink changes
+    assert (b != a).any() and (c == 15).any()
+    assert (c == 15).sum() < (a == 15).sum() + (b != a).sum() + 1
+
+
+def test_leftover_gate_finds_ink_beside_a_rect():
+    import build_check
+    from collections import namedtuple
+    Row = namedtuple("Row", "id file x y w h form")
+    old = np.zeros((32, 64), dtype=np.int32)
+    old[10:14, 10:30] = 15  # the row's ink, inside the rect
+    old[8, 12] = 15         # the top of a glyph, above it
+    new = old.copy()
+    new[10:14, 10:30] = 3
+    t = namedtuple("T", "clut")([0, 1] + [0x7FFF] * 14)
+    by_id = {"a": Row("a", "F", 8, 10, 30, 4, "menu")}
+    items = [("a", ((8, 10, 30, 4), "x", "menu", "c"))]
+    assert not build_check.leftovers("F", old, new, t, items, by_id, {})  # no budget: the rect is the box, so no ring
+    budgets = {"a": {"uv": "0,0,64,32"}}
+    assert any("1 px" in e for e in build_check.leftovers("F", old, new, t, items, by_id, budgets))
+    new[8, 12] = 0
+    assert not build_check.leftovers("F", old, new, t, items, by_id, budgets)
+
+
+@needs_rom
+def test_stamp_x_rebuilds_the_rows_it_can_be_compared_on():
+    data = disc.Disc(str(ROOT / "rom" / credits.TRACK1)).read("/SUBDATA/SELMAIN.BIN")
+    t = tim.parse(data)
+    a, b = gfx.tim_px(t, data), gfx.tim_px(t, gfx.stamp_x(data))
+    for y in (122, 140, 141):  # the rect's rows the kanji never touched: the redraw must match the art
+        assert (a[y, 114:168] == b[y, 114:168]).all(), y
+    keep = np.ones(a.shape, bool)
+    keep[122:142, 114:168] = False
+    assert (a[keep] == b[keep]).all()
+    assert not np.isin(b[123:140, 114:118], 15).any()
 
 
 @needs_rom

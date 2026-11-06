@@ -37,13 +37,15 @@ def english_edit(name, data):
         return credits.edit_tim(name, data)
     if name == "DATA/GO_S0":
         data = gfx.go_banner(data)
+    if name == "SUBDATA/SELMAIN":
+        data = gfx.stamp_x(data)
     rows = ENGLISH.get(name)
     if rows:
         data = gfx.typeset(data, rows)
     if name.startswith("OPTI/CARD"):
         card = name[-2:]
         row = next(r for r in tl_check.table(tl_check.EN / "lyric_cards.tsv") if r["card"] == card)
-        data = gfx.lyric_card(data, gfx.lyric_rects()[card], row["title"], tl_check.lyric_lines(row["gist"]))
+        data = gfx.lyric_card(data, card, gfx.lyric_rects()[card], row["title"], tl_check.lyric_lines(row["gist"]))
     return data
 
 
@@ -55,7 +57,7 @@ def english_subs(movie):
 def build(out=None, marker=False, spike=False, identity=False, movies=True):
     """Returns the path of the new cue. identity: no edits. movies=False skips the FMV burn, which takes minutes."""
     global ENGLISH
-    out = out or ROOT / ("build/marker" if marker else "build/spike" if spike else "build")
+    out = out or ROOT / ("build/marker" if marker else "build/spike" if spike else "build/identity" if identity else "build")
     check_rom.check()
     out = Path(out)
     out.mkdir(parents=True, exist_ok=True)
