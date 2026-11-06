@@ -12,4 +12,6 @@ Addresses are for the dump in `rom.sha1` unless a note says otherwise.
 
 | File | Covers | State |
 |---|---|---|
-| <text.md> | <encoding, control codes, pointer tables> | <verified / partly guessed> |
+| [disc.md](disc.md) | disc layout, file types, loaders, free space, debug strings | verified except where marked |
+| [text.md](text.md) | no text encoding: why every Japanese string is a graphic or a video frame | verified by scan; draw path is a guess until phase 5 |
+| [graphics.md](graphics.md) | graphics-text survey: every Japanese element and FMV caption | static sweep complete; tour check in phase 8 |

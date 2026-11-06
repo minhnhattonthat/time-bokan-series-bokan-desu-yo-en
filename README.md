@@ -1,7 +1,7 @@
-# <Game title> English translation
+# Time Bokan Series: Bokan desu yo English translation
 
-Unofficial English fan translation of **<Game title>** (<platform>, <publisher>, <year>): the source text and tools
-that build the patch.
+Unofficial English fan translation of **Time Bokan Series: Bokan desu yo** (PlayStation, Banpresto, 1998): the source
+text and tools that build the patch. Work in progress, see `docs/status.md`.
 
 **Just want to play?** Download the patch from [Releases](../../releases) and follow its README. This repository holds
 no game data you can play; you need your own dump of the Japanese game.
@@ -56,8 +56,9 @@ If you enjoy this translation, you can support my work on Ko-fi:
 
 ## Licence
 
-Tools and English translation: MIT. The original Japanese text in `script/` is <publisher>'s and is included only so
-the translation can be checked against it. <Game title> is (c) <publisher>; this project is not affiliated with them.
+Tools and English translation: MIT. The original Japanese text in `script/` is Banpresto's and is included only so
+the translation can be checked against it. Time Bokan Series: Bokan desu yo is (c) Banpresto and Tatsunoko Production;
+this project is not affiliated with them.
 Do not share patched ROMs.
 
 The translation was made with extensive AI assistance (Claude by Anthropic). Corrections are very welcome.
