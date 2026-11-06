@@ -1,7 +1,7 @@
 # Time Bokan Series: Bokan desu yo English translation
 
 Unofficial English fan translation of **Time Bokan Series: Bokan desu yo** (PlayStation, Banpresto, 1998): the source
-text and tools that build the patch. Work in progress, see `docs/status.md`.
+text and tools that build the patch. Progress and open bugs are in `docs/status.md`.
 
 **Just want to play?** Download the patch from [Releases](../../releases) and follow its README. This repository holds
 no game data you can play; you need your own dump of the Japanese game.
@@ -13,13 +13,18 @@ helps most.
 
 | Part | Status |
 |---|---|
-| <Dialogue / story> | <Translated> |
-| <Menus, items, skills, system messages> | <Translated> |
-| <Title screen, logos, graphics with text> | <Translated / Left in Japanese> |
-| <Name entry> | <Translated / Japanese kana only> |
-| <Songs, voiced lines, credits roll> | <Left in Japanese> |
+| Movie dialogue | English subtitles burned into all 16 movies; voices stay Japanese |
+| Menus, options, ship names | Translated |
+| Stage cards, banners, HUD | Translated |
+| Credits roll | Translated |
+| Sound test lyric cards | English title and a short summary, not line-by-line lyrics |
+| Title logo | Left in Japanese, as no official English logo is known |
+| Song captions in the movies | Left in Japanese, burned into the picture |
+| Songs and voice samples | Left in Japanese |
 
-Known issues: <none known / see [Issues](../../issues)>.
+Known issues: nobody checked the subtitles by ear, as they come from machine transcription with corrections; a few lines
+on unclear audio have no subtitle; some credit name readings are unconfirmed. Tested on PCSX-Redux only, by scripted warps
+to every scene rather than a full playthrough. See also [Issues](../../issues).
 
 ## What's here
 
@@ -40,11 +45,14 @@ Known issues: <none known / see [Issues](../../issues)>.
 Needs Python 3.12+ and your own dump of the Japanese game.
 
 ```sh
-git clone https://github.com/minhnhattonthat/<repo>
-cd <repo>
-# copy your dump to: rom/<file>
-#   (<size> bytes, SHA-1 <sha1>; the build refuses any other dump, see rom.sha1)
-python -X utf8 tools/build.py                          # -> build/<game>_en.<ext>
+git clone https://github.com/minhnhattonthat/time-bokan-series-bokan-desu-yo-en
+cd time-bokan-series-bokan-desu-yo-en
+# copy your dump (.cue and all 24 tracks) to rom/, for example:
+#   rom/Time Bokan Series - Bokan desu yo (Japan) (Track 01).bin
+#   (349008576 bytes, CRC32 e9488854, MD5 47479f82e99e046b6d2f6b0af734fc53,
+#    SHA-1 8bfdb89e2ca65c053454fa323b0f373db3695b41; the build refuses any other dump, see rom.sha1)
+# Redump: http://redump.org/discs/quicksearch/SLPS-01211/
+python -X utf8 tools/build.py                          # -> build/ (about 15 min for the movies)
 python -X utf8 tools/check.py                          # tests + text lint
 ```
 

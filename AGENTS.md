@@ -15,7 +15,7 @@ Skill: translate-retro-game (Claude Code: plugin, enabled in .claude/settings.js
 - Build:    `python -X utf8 tools/build.py` (English disc in `build/`, about 15 min for the movies; `--no-movies` for a quick one, `--identity` equals the dump, held by `tests/test_build.py`), then `python -X utf8 tools/build_check.py` (no change outside the allowed files, rects and credit tables)
 - Marker:   `python -X utf8 tools/build.py --marker` (`build/marker/`: row numbers on every rect, test line in every movie; about 15 min) then `tools/debug/warp_all.py --rom build/marker/...cue --out work/qa/marker`. `--spike` letters `script/spike.tsv` instead (`build/spike/`, no movies).
 - Budgets:  `tools/debug/warp_all.py --prims --out work/qa/prim [scene ...]`, `tools/prims.py rows work/qa/prim/* --out work/recon/prims_rows.tsv`, `tools/budgets.py` (`script/budgets.tsv`). `tools/credits.py dump` is the roll by line; `tools/cells.py scan FILE` lists cell groups.
-- Release: not written yet (phase 9); add it here when it exists. Never publish without the user.
+- Release: `python -X utf8 tools/release.py [--version 1.0] [--no-build] [--force]` (build, every gate, xdelta3 patch of Track 01, re-apply check, zip in `release/`; zip README from `docs/release_readme.txt`). Never publish without the user.
 - Clean:    `python -X utf8 tools/clean.py` (published projects: lists rebuildable/downloadable files; `--yes` deletes)
 
 ## Paths
