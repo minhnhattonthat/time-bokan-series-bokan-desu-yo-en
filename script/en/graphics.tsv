@@ -102,8 +102,8 @@ card.stf	Shock Showdown!|Dokurobey, Ruler|of the Shadows!
 card.sts	Racing to Battle:|Odate-Buta, Koron!
 sprite.ikari	MAD	head	怒
 sprite.harawata	Guts		on a monitor
-sprite.itadaki1	Itadakiman	tag
-sprite.itadaki2	Itadakiman	tag
-sprite.itadaki3	Itadakiman	tag
+sprite.itadaki1	Itadakiman	credit	drawn 1:1 on a moving enemy, so it needs the row's full height
+sprite.itadaki2	Itadakiman	credit
+sprite.itadaki3	Itadakiman	credit
 sprite.sign1	Private! Keep Out
 sprite.sign2	Doron Company		reading uncertain
