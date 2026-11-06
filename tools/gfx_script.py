@@ -24,9 +24,9 @@ def rows(path=ROOT / "script" / "graphics.tsv"):
     return out
 
 
-def sheet(x_dir, out, form, lo, hi):
+def sheet(x_dir, out, form, lo, hi, ids=None):
     from PIL import Image, ImageDraw
-    rs = [r for r in rows() if not form or r.form == form][lo:hi]
+    rs = [r for r in rows() if (not form or r.form == form) and (not ids or r.id in ids)][lo:hi]
     cols, cell_w, cell_h = 6, 200, 66
     img = Image.new("RGB", (cols * cell_w, (len(rs) + cols - 1) // cols * cell_h), (72, 0, 72))
     d = ImageDraw.Draw(img)
@@ -50,5 +50,6 @@ if __name__ == "__main__":
     ap.add_argument("--form")
     ap.add_argument("--from", dest="lo", type=int)
     ap.add_argument("--to", dest="hi", type=int)
+    ap.add_argument("--ids", help="file of row ids, one a line")
     a = ap.parse_args()
-    sheet(a.x_dir, a.out, a.form, a.lo, a.hi)
+    sheet(a.x_dir, a.out, a.form, a.lo, a.hi, open(a.ids).read().split() if a.ids else None)

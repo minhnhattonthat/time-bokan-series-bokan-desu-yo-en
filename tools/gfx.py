@@ -194,6 +194,7 @@ ROW_INKS = {"hud.gameover": Inks(15, 10), "sel.repair": Inks(15, 1, False),
             "sprite.itadaki1": Inks(12, 11), "sprite.itadaki2": Inks(12, 11), "sprite.itadaki3": Inks(12, 11),
             "sprite.sign1": Inks(3, 14, bg=14), "sprite.sign2": Inks(11, 14, bg=14)}
 TAG_INKS = Inks(15, 1)  # ship name tags: white on a dark outline in every file
+ROW_ALIGN = {"go.fin1": "r", "go.fin3": "l"}  # THE END !: three quads 64 px apart, so even out the gaps
 
 
 def stamp_x(data):
@@ -243,7 +244,9 @@ def typeset(data, rows):
         cell = px[y:y + h, x:x + w]
         if clear:
             cell[:] = bg[:, None]
-        oy, ox = (h - gh) // 2, 0 if align == "l" else (w - gw) // 2
+        if form == "card":  # white on a pale halo was lost on STAGE 5's pink; the original's stroke is dark
+            line = ink_indices(t)[0]
+        oy, ox = (h - gh) // 2, {"l": 0, "r": w - gw}.get(align, (w - gw) // 2)
         box = cell[oy:oy + gh, ox:ox + gw]
         box[halo] = line
         box[ink] = np.broadcast_to(fill[oy:oy + gh, None], ink.shape)[ink]
@@ -297,7 +300,7 @@ def english_items():
         others = [(o.x, o.y, o.w, o.h) for o in by_id.values() if o.file == r.file and o.id != r.id and o.form != "keep"]
         if gw > r.w or gh > r.h:
             rect = widened(rect, max(gw, r.w), max(gh, r.h), uv_box(budgets[r.id], rect), others)
-        row = (rect, e["en"], forms[e["id"]], "c")
+        row = (rect, e["en"], forms[e["id"]], ROW_ALIGN.get(r.id, "c"))
         if r.id.startswith("extra."):
             row = (rect, e["en"], forms[e["id"]], "l", EXTRAS_INKS)
         inks = ROW_INKS.get(r.id, TAG_INKS if r.id.startswith("tag.") else None)

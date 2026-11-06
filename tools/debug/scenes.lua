@@ -107,6 +107,23 @@ S.buttons = function()
   W.done()
 end
 
+-- Rebinding: left and right swap the row's action, so the other label strips and the decide stamp draw.
+S.buttons_edit = function()
+  to_options()
+  W.tap("circle")
+  W.wait_t(0x51, 900)
+  W.frames(120)
+  for row = 0, 3 do
+    for i = 1, 3 do W.tap("right"); W.frames(20); W.shot(string.format("r%d_right%d", row, i)) end
+    W.tap("circle"); W.frames(12); W.shot(string.format("r%d_ok", row))
+    W.frames(30)
+    W.tap("down"); W.frames(30)
+  end
+  W.tap("cross"); W.frames(20); W.shot("exit1")
+  W.frames(20); W.shot("exit2")
+  W.done()
+end
+
 S.sound = function()
   to_options()
   W.tap("down"); W.frames(30)

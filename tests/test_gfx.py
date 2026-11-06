@@ -221,6 +221,18 @@ def test_budgets_cover_rows():
     assert {ln.split("\t")[0] for ln in rows} == want
 
 
+def test_balance_leaves_no_lone_last_word():
+    from PIL import ImageFont
+    font = ImageFont.truetype(str(fmv_burn.FONT), fmv_burn.SIZE)
+    text = "Still, don't let your guard down, you two."
+    greedy = fmv_burn.wrap(text, font)
+    assert greedy[-1] == "two."
+    lines = fmv_burn.balance(greedy, font)
+    assert " ".join(lines) == text and len(lines) == 2 and len(lines[1].split()) > 1
+    assert all(font.getlength(ln) <= fmv_burn.MAX_W for ln in lines)
+    assert fmv_burn.balance(["One line"], font) == ["One line"]
+
+
 def test_subtitle_wraps_to_width():
     from PIL import ImageFont
     font = ImageFont.truetype(str(fmv_burn.FONT), fmv_burn.SIZE)

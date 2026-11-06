@@ -41,6 +41,19 @@ def wrap(text, font, width=MAX_W):
     return lines + [cur] if cur else lines
 
 
+def balance(lines, font):
+    """lines with words moved down while that narrows the wider of each pair, so a greedy wrap leaves no lone last word."""
+    lines = [ln.split() for ln in lines]
+    width = lambda words: font.getlength(" ".join(words))  # noqa: E731
+    for i in range(len(lines) - 1, 0, -1):
+        while len(lines[i - 1]) > 1:
+            up, down = lines[i - 1][:-1], [lines[i - 1][-1]] + lines[i]
+            if width(down) > MAX_W or max(width(up), width(down)) >= max(width(lines[i - 1]), width(lines[i])):
+                break
+            lines[i - 1], lines[i] = up, down
+    return [" ".join(ln) for ln in lines]
+
+
 def text_masks(lines, w, h):
     """(ink, halo) boolean masks of the subtitle, drawn without antialiasing, centred, sitting on BOTTOM."""
     font = ImageFont.truetype(str(FONT), SIZE)
@@ -92,7 +105,7 @@ def burn_movie(track, entry, movie, subs):
         if not sub:
             continue
         if sub[2] not in masks:
-            lines = wrap(sub[2], font)
+            lines = balance(wrap(sub[2], font), font)
             assert len(lines) <= MAX_LINES, f"{movie}: subtitle over {MAX_LINES} lines: {sub[2]!r}"
             masks[sub[2]] = text_masks(lines, f.w, f.h)
         bs = mdec.frame_bytes(f, raw.__getitem__)
