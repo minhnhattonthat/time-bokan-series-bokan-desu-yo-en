@@ -1,0 +1,258 @@
+id	file	x	y	w	h	form	jp	note
+title.normal	SUBDATA/TITLE3	33	40	112	17	menu	ノーマルゲーム
+title.special	SUBDATA/TITLE3	26	72	124	18	menu	スペシャルゲーム
+title.options	SUBDATA/TITLE3	48	104	82	18	menu	オプション
+title.copy	SUBDATA/TITLE3	96	16	76	16	menu	©タツノコプロ	beside ©BANPRESTO; 1997 1998 stay
+title.desc1	SUBDATA/TITLE3	176	32	80	16	cells	悪玉パワー	16 px cells; joins title.desc2
+title.desc2	SUBDATA/TITLE3	176	48	64	16	cells	炸裂!!
+title.desc3	SUBDATA/TITLE3	176	64	80	16	cells	ビギナーに
+title.desc4	SUBDATA/TITLE3	176	80	64	16	cells	ゲームに
+title.desc5	SUBDATA/TITLE3	176	96	64	16	cells	慣れたら
+title.desc6	SUBDATA/TITLE3	176	112	80	16	cells	各種設定が
+title.desc7	SUBDATA/TITLE3	0	128	112	16	cells	おすすめよーん
+title.desc8	SUBDATA/TITLE3	0	144	112	16	cells	ドクロベェ暗躍
+title.desc9	SUBDATA/TITLE3	0	160	96	16	cells	チャレンジ!
+title.desc10	SUBDATA/TITLE3	0	176	80	16	cells	おこのみに
+title.desc11	SUBDATA/TITLE3	0	192	104	16	cells	変えられます!
+title.hint_select	SUBDATA/TITLE3	0	208	32	16	button	選ぶ	plain strip
+title.hint_ok	SUBDATA/TITLE3	32	208	32	16	button	決定	plain strip
+title.hint_back1	SUBDATA/TITLE3	64	208	32	16	button	戻る	plain strip
+title.hint_back2	SUBDATA/TITLE3	96	208	32	16	button	戻る	plain strip
+title.btn_select	SUBDATA/TITLE3	0	224	62	32	button	選ぶ	with d-pad mark
+title.btn_ok	SUBDATA/TITLE3	64	224	60	32	button	決定	with circle mark
+title.btn_back	SUBDATA/TITLE3	128	224	60	32	button	戻る	with cross mark
+logo.title0	SUBDATA/TITLE0	0	0	256	256	keep	ボカンですよ タイムボカンシリーズ	logo stays Japanese, D5
+logo.title1	SUBDATA/TITLE1	0	0	256	256	keep	ボカンですよ タイムボカンシリーズ	logo stays Japanese, D5
+logo.opti1	SUBDATA/OPTI1	0	0	256	256	keep	ボカンですよ タイムボカンシリーズ	logo stays Japanese, D5
+opt.buttons	SUBDATA/OPTI0	23	6	81	20	menu	ボタン設定
+opt.credit	SUBDATA/OPTI0	23	38	71	20	menu	クレジット
+opt.sound	SUBDATA/OPTI0	23	70	66	20	menu	サウンド
+opt.voice	SUBDATA/OPTI0	23	102	48	20	menu	ボイス
+opt.extras	SUBDATA/OPTI0	23	134	54	20	menu	おまけ
+opt.player1	SUBDATA/OPTI0	166	82	56	14	menu	1プレイヤー
+opt.pad	SUBDATA/OPTI0	26	166	40	15	menu	パット	drawn over the controller outline
+cfg.rolling	SUBDATA/CONFIG01	0	176	80	16	menu	ローリング
+cfg.big1	SUBDATA/CONFIG02	0	0	64	16	menu	巨大メカ	state 1
+cfg.big2	SUBDATA/CONFIG02	80	0	64	16	menu	巨大メカ	state 2
+cfg.bomb1	SUBDATA/CONFIG02	160	0	80	16	menu	ドクロ爆弾	state 1
+cfg.shot1	SUBDATA/CONFIG02	0	16	56	16	menu	ショット	state 1
+cfg.shot2	SUBDATA/CONFIG02	160	16	56	16	menu	ショット	state 2
+cfg.bomb2	SUBDATA/CONFIG02	0	32	80	16	menu	ドクロ爆弾	dim state
+cfg.shot3	SUBDATA/CONFIG02	80	32	56	16	menu	ショット	state 3
+cfg.bomb3	SUBDATA/CONFIG02	80	48	80	16	menu	ドクロ爆弾	state 3
+cfg.big3	SUBDATA/CONFIG02	160	48	64	16	menu	巨大メカ	state 3
+cfg.big4	SUBDATA/CONFIG02	0	80	64	16	menu	巨大メカ	state 4
+cfg.bomb4	SUBDATA/CONFIG02	0	96	80	16	menu	ドクロ爆弾	dim state
+cfg.shot4	SUBDATA/CONFIG02	0	112	56	16	menu	ショット	state 4
+cfg.back	SUBDATA/CONFIG02	92	82	58	28	button	戻る	cross mark; EXIT beside it is English
+cfg.select	SUBDATA/CONFIG02	2	130	60	28	button	選ぶ	d-pad mark
+cfg.ok	SUBDATA/CONFIG02	2	162	60	28	button	決定	circle mark
+cfg.stamp1	SUBDATA/CONFIG02	163	66	84	77	stamp	決	large stamp, flat
+cfg.stamp2	SUBDATA/CONFIG02	163	150	84	81	stamp	決	large stamp, shadow
+cfg.stamp3	SUBDATA/CONFIG02	74	151	86	89	stamp	決	large stamp, 3D
+sel.repair	SUBDATA/SELMAIN	114	122	54	20	stamp	整備中	over a green X
+extra.m00	OPTI/OMAKE1	0	0	96	16	menu	プロローグA	movie list row, MOVIE order unverified
+extra.m01	OPTI/OMAKE1	0	16	132	16	menu	調子に乗る その1
+extra.m02	OPTI/OMAKE1	0	32	136	16	menu	調子に乗る その2
+extra.m03	OPTI/OMAKE1	0	48	136	16	menu	調子に乗る その3
+extra.m04	OPTI/OMAKE1	0	64	96	16	menu	善玉の挑戦状
+extra.m05	OPTI/OMAKE1	0	80	64	16	menu	自爆決着
+extra.m06	OPTI/OMAKE1	0	96	96	16	menu	エンディング
+extra.m07	OPTI/OMAKE1	0	112	96	16	menu	プロローグB
+extra.m08	OPTI/OMAKE1	0	128	160	16	menu	ドクチャン激励 その1
+extra.m09	OPTI/OMAKE1	0	144	64	16	menu	特訓予告
+extra.m10	OPTI/OMAKE1	0	160	128	16	menu	新機種プレゼント
+extra.m11	OPTI/OMAKE1	0	176	164	16	menu	ドクチャン激励 その2
+extra.m12	OPTI/OMAKE1	0	192	144	16	menu	ドクロベエの裏切り
+extra.m13	OPTI/OMAKE1	0	208	112	16	menu	善玉の直接攻撃
+extra.m14	OPTI/OMAKE1	0	224	112	16	menu	おしおきだベー
+hud.gameover	DATA/STANDARD	72	154	64	14	hud	ゲームオーバー
+hud.danger	DATA/STANDARD	126	68	20	22	hud	危	plain
+hud.danger_c	DATA/STANDARD	154	66	28	26	hud	危	in a circle
+go.game	DATA/GO_S0	160	0	64	160	banner	ゲーム	large, stacked; rect also holds go.over_o, whose bbox overlaps the ゲ stem
+go.over_o	DATA/GO_S0	186	62	38	30	banner	オ	first kana of オーバー, packed beside ゲ
+go.over	DATA/GO_S0	0	222	64	24	banner	ーバー	rest of オーバー, see go.over_o
+go.fin	DATA/GO_S2	106	98	138	46	banner	おわり
+tag.doron	DATA/DORON	13	240	52	16	tag	ドロンジョカー
+tag.boya	DATA/BOYA	13	240	52	16	tag	ボヤッキーカー
+tag.tonzr	DATA/TONZR	13	240	52	16	tag	トンズラーカー
+tag.denden	DATA/DENDEN	14	240	54	16	tag	デンデンメカ
+tag.andoro	DATA/ANDORO	11	240	59	16	tag	アンドロメダマ号
+tag.dokurobe	DATA/DOKUROBE	11	240	59	16	tag	アンドロメダマ号	same tag as ANDORO
+tag.gaikotu	DATA/GAIKOTU	20	240	40	16	tag	ガイコッツ
+tag.rakuda	DATA/RAKUDA	14	240	51	16	tag	タイムラクーダ
+tag.syareko	DATA/SYAREKO	10	240	60	16	tag	シャレコーベメカ
+tag.sya_bagi	DATA/SYA_BAGI	10	240	60	16	tag	シャレコーベバギー
+card.st1	SUBDATA/TAIM_ST1	3	98	250	60	card	鷹は舞い戻っただコロン
+card.st2	SUBDATA/TAIM_ST2	3	84	250	90	card	眠らぬ森のドロンボーだよゼンダマン
+card.st3	SUBDATA/TAIM_ST3	3	99	250	60	card	巨大勇者と異次元ランデブー!
+card.st4	SUBDATA/TAIM_ST4	3	84	250	90	card	ボカンと登場! 元祖タイムメカだペッチャ
+card.st5	SUBDATA/TAIM_ST5	3	84	250	90	card	正義の切り札! ヤッターワンFZだコロン
+card.stf	SUBDATA/TAIM_STF	2	84	251	90	card	驚き決戦! 影の支配者ドクロベェ
+card.sts	SUBDATA/TAIM_STS	3	84	250	90	card	戦場に駆ける、おだてブタだコロン!
+sprite.ikari	STAGE3/DATA/ST3_S2F	0	166	32	36	sprite	怒	not yet seen in game
+sprite.harawata	STAGE3/DATA/ST3_S5D	176	12	56	16	sprite	はらわた	on a monitor; not yet seen in game
+sprite.itadaki1	STAGE4/BG/ST4_SB0	190	106	66	14	sprite	イタだきまん	red name; seen on a walking enemy
+sprite.itadaki2	STAGE4/BG/ST4_SB0	96	240	72	16	sprite	いただきまん
+sprite.itadaki3	STAGE4/BG/ST4_SB0	184	240	72	16	sprite	イタだきまん
+sprite.sign1	STAGE7/BG/ST7_SA0	98	108	62	8	sprite	私有地・立入禁止	sign at the start of the final stage
+sprite.sign2	STAGE7/BG/ST7_SA0	116	116	44	7	sprite	ドロンカンパニー	dark line under sign1; reading uncertain
+scribble.st2c0	STAGE2/BG/ST2_C0	2	33	28	30	scribble	アコリ	dev scribble on a spare tile, reading uncertain; confirm unused in phase 8
+end.role.doronjo	DATA/END_4	8	0	56	16	credit	ドロンジョ	cast role; rects are by eye, exact spans come from S10OVER in phase 5
+end.role.boyacky	DATA/END_4	72	0	62	16	credit	ボヤッキー	
+end.role.tonzura	DATA/END_4	145	0	56	16	credit	トンズラー
+end.role.dokuro1	DATA/END_4	208	0	40	16	credit	ドクロ	wraps to end.role.dokuro2
+end.role.dokuro2	DATA/END_4	8	16	65	16	credit	ベエ・ペラ助
+end.role.yatter1	DATA/END_4	81	16	92	16	credit	ヤッターマン1号
+end.role.tanpei2	DATA/END_4	178	16	54	16	credit	丹平2号
+end.role.zenda	DATA/END_4	8	32	39	16	credit	ゼンダ
+end.role.otasuke	DATA/END_4	48	32	48	16	credit	オタスケ
+end.role.yattode	DATA/END_4	97	32	56	16	credit	ヤットデタ
+end.role.ippatsu	DATA/END_4	153	32	54	16	credit	イッパツマン
+end.role.odate1	DATA/END_4	208	32	40	16	credit	オダテブ	wraps to end.role.odate2
+end.role.odate2	DATA/END_4	8	48	29	16	credit	タ・他
+end.role.itadaki	DATA/END_4	41	48	47	16	credit	イタダキ	
+end.role.ikemasu	DATA/END_4	88	48	47	16	credit	いけます	
+end.role.itachi	DATA/END_4	135	48	25	16	credit	イタチ
+end.role.oshii	DATA/END_4	161	48	73	16	credit	オシイ星人・他
+end.role.orokabu	DATA/END_4	8	64	51	16	credit	オロカブ
+end.role.omocha	DATA/END_4	65	64	70	16	credit	オモッチャマ
+end.role.amattan	DATA/END_4	137	64	58	16	credit	アマッタン
+end.role.narr1	DATA/END_4	202	64	46	16	credit	ナレータ	wraps to end.role.narr2
+end.role.narr2	DATA/END_4	8	80	16	16	credit	ー
+end.role.fukuro	DATA/END_4	26	80	69	16	credit	ふくろうメカ
+end.name.ohara	DATA/END_4	97	80	67	16	credit	小原 乃梨子
+end.name.yanami	DATA/END_4	169	80	65	16	credit	八奈見 乗児
+end.name.tate1	DATA/END_4	240	80	8	16	credit	た	wraps to end.name.tate2
+end.name.tate2	DATA/END_4	10	96	62	16	credit	てかべ 和也	
+end.name.takiguchi	DATA/END_4	72	96	49	16	credit	滝口 順平
+end.name.ota	DATA/END_4	129	96	47	16	credit	太田 淑子
+end.name.okamoto	DATA/END_4	185	96	55	16	credit	岡本 茉利
+end.name.mitsuya	DATA/END_4	8	112	76	16	credit	三ツ矢 雄二	
+end.name.mizushima	DATA/END_4	84	112	30	16	credit	水島 裕	
+end.name.sogabe	DATA/END_4	112	112	68	16	credit	曽我部 和恭
+end.name.matsumoto	DATA/END_4	185	112	56	16	credit	松本 保典
+end.name.tanaka	DATA/END_4	8	128	61	16	credit	田中 真弓	
+end.name.chafurin	DATA/END_4	69	128	34	16	credit	茶風林	
+end.name.yokoo	DATA/END_4	103	128	47	16	credit	横尾 まり	
+end.name.katsura	DATA/END_4	150	128	58	16	credit	桂 玲子	
+end.name.kawakami1	DATA/END_4	216	128	24	16	credit	川上	wraps to end.name.kawakami2
+end.name.kawakami2	DATA/END_4	8	144	31	16	credit	とも子
+end.name.suzuoki	DATA/END_4	41	144	55	16	credit	鈴置 洋孝
+end.name.others	DATA/END_4	104	144	21	16	credit	・他
+end.role.director	DATA/END_4	8	160	52	16	credit	ディレクター
+end.name.tomato	DATA/END_4	65	160	54	16	credit	とまとあき
+end.role.song	DATA/END_4	8	176	166	16	credit	「ボカンと一発!ドロンボー」	song title
+end.role.lyrics	DATA/END_4	177	176	67	16	credit	作詞・作曲
+end.role.arrange	DATA/END_4	8	192	29	16	credit	編曲
+end.role.vocal	DATA/END_4	41	192	15	16	credit	唄
+end.role.chorus1	DATA/END_4	65	192	49	16	credit	コーラス
+end.role.chorus2	DATA/END_4	121	192	39	16	credit	コーラス	narrow form
+end.name.yamamoto	DATA/END_4	160	192	56	16	credit	山本 正之
+end.name.jimbo1	DATA/END_4	225	192	23	16	credit	神保	wraps to end.name.jimbo2 at the row below the title tiles
+end.name.jimbo2	DATA/END_4	209	224	23	16	credit	正明
+end.name.masayuki	DATA/END_4	32	208	44	16	credit	まさゆき
+end.name.pinkpig1	DATA/END_4	81	208	91	16	credit	ピンク・ピッギーズ
+end.name.pinkpig2	DATA/END_4	177	208	69	16	credit	ピンク・ピッギーズ	narrow form
+end.head.cast	DATA/END_4	35	224	81	24	credit	声の出演	section heading
+end.head.theme	DATA/END_4	149	224	59	24	credit	主題歌	section heading
+end.role.storyboard	DATA/END_5	8	0	98	16	credit	監督/絵コンテ
+end.role.direct	DATA/END_5	113	0	28	16	credit	演出
+end.role.mechadesign1	DATA/END_5	146	0	102	16	credit	ゲストメカデザイン	last stroke wraps to column 8 of the next row
+end.role.mechadesign2	DATA/END_5	17	16	85	16	credit	ゲストメカデザイン	narrow form
+end.role.animation	DATA/END_5	106	16	29	16	credit	作画
+end.role.keyanim	DATA/END_5	137	16	29	16	credit	原画
+end.role.animcheck1	DATA/END_5	170	16	74	16	credit	動画チェック
+end.role.animcheck2	DATA/END_5	8	32	33	16	credit	チェック	narrow form
+end.role.colour	DATA/END_5	42	32	43	16	credit	色指定
+end.role.finish	DATA/END_5	91	32	26	16	credit	仕上
+end.role.art	DATA/END_5	121	32	100	16	credit	美術監督/背景
+end.role.photo	DATA/END_5	225	32	23	16	credit	撮影	last stroke wraps to the next row
+end.role.edit	DATA/END_5	22	48	27	16	credit	編集
+end.role.develop	DATA/END_5	50	48	29	16	credit	現像
+end.role.soundprod	DATA/END_5	82	48	59	16	credit	音響制作
+end.role.record	DATA/END_5	145	48	29	16	credit	録音
+end.role.studio	DATA/END_5	177	48	46	16	credit	スタジオ
+end.role.prod1	DATA/END_5	225	48	23	16	credit	制作	wraps to end.role.prod2
+end.role.prod2	DATA/END_5	8	64	38	16	credit	管理	制作管理
+end.role.producer1	DATA/END_5	50	64	84	16	credit	プロデューサー
+end.role.producer2	DATA/END_5	137	64	63	16	credit	プロデューサー	narrow form
+end.role.studio2	DATA/END_5	202	64	38	16	credit	スタジオ	narrow form
+end.name.sasagawa	DATA/END_5	97	96	65	16	credit	笹川ひろし
+end.name.hara	DATA/END_5	164	96	44	16	credit	原 征太郎
+end.name.ogawa	DATA/END_5	211	96	33	16	credit	小川浩
+end.name.iguchi	DATA/END_5	32	112	48	16	credit	井口忠一
+end.name.sakuma	DATA/END_5	81	112	64	16	credit	佐久間 信計	reading of the given name uncertain
+end.name.shigeko	DATA/END_5	152	112	34	16	credit	しげ子	surname elsewhere; see the roll in game
+end.name.kobata	DATA/END_5	194	112	51	16	credit	木場田 実
+end.name.ri	DATA/END_5	48	128	41	16	credit	李 載束
+end.name.kanichi	DATA/END_5	98	128	22	16	credit	韓一
+end.role.dougas	DATA/END_5	121	128	25	16	credit	動画
+end.name.iijima	DATA/END_5	152	128	56	16	credit	飯島 孝枝
+end.role.colour1	DATA/END_5	217	128	31	16	credit	カラー	wraps to end.role.colour2
+end.role.colour2	DATA/END_5	8	144	42	16	credit	センター	カラーセンター
+end.name.tada	DATA/END_5	57	144	59	16	credit	多田 喜久子
+end.name.yokoyama	DATA/END_5	121	144	71	16	credit	横山 幸太郎
+end.name.masahiko	DATA/END_5	194	144	23	16	credit	政彦
+end.name.aizawa	DATA/END_5	225	144	23	16	credit	相沢
+end.mark.slash	DATA/END_5	8	160	24	16	credit	/
+end.name.kenshiro	DATA/END_5	32	160	37	16	credit	健四郎
+end.name.takegawa	DATA/END_5	72	160	49	16	credit	武川 昌志
+end.name.miki	DATA/END_5	129	160	56	16	credit	三木 幸子
+end.name.tokyo1	DATA/END_5	194	160	23	16	credit	東京	wraps to end.name.tokyo2
+end.role.music	DATA/END_5	217	160	31	16	credit	音楽
+end.name.tokyo2	DATA/END_5	8	176	38	16	credit	現像所	東京現像所
+end.name.yamamoto2	DATA/END_5	49	176	56	16	credit	山本 正之
+end.name.jimbo3	DATA/END_5	112	176	57	16	credit	神保 正明
+end.name.zack1	DATA/END_5	177	176	71	16	credit	ザックプロモー	wraps to end.name.zack2
+end.name.zack2	DATA/END_5	8	192	33	16	credit	ション	ザックプロモーション
+end.name.seion	DATA/END_5	49	192	66	16	credit	整音スタジオ
+end.name.shibata	DATA/END_5	17	208	37	16	credit	柴田勝
+end.name.okura	DATA/END_5	56	208	58	16	credit	大倉 宏俊
+end.head.game	DATA/END_5	147	200	99	24	credit	ゲーム制作	section heading
+end.head.anim	DATA/END_5	35	224	177	28	credit	アニメーション・スタッフ	section heading
+end.role.mainprog	DATA/END_6	10	0	71	16	credit	メインプログラム
+end.role.enemyprog	DATA/END_6	90	0	84	16	credit	エネミープログラム
+end.role.graphics	DATA/END_6	177	0	49	16	credit	グラフィック
+end.role.sound1	DATA/END_6	234	0	14	16	credit	サ	wraps to end.role.sound2
+end.role.sound2	DATA/END_6	8	16	66	16	credit	ウンド・SE	サウンド・SE
+end.role.thanks	DATA/END_6	74	16	65	16	credit	スペシャルサンクス
+end.role.gamedir	DATA/END_6	145	16	79	16	credit	ゲームディレクター
+end.name.sono	DATA/END_6	225	16	23	16	credit	荘埜	kanji uncertain; joins the next row
+end.name.takeaki	DATA/END_6	8	32	61	16	credit	(らい)毅明	nickname in brackets, given name uncertain
+end.name.yamashita	DATA/END_6	72	32	73	16	credit	山下(120%)孝
+end.name.matsunaga	DATA/END_6	152	32	104	16	credit	松永(キャロライン)貴男
+end.name.fujii	DATA/END_6	8	48	113	16	credit	藤井(データアーティスト)恵
+end.name.sugawara	DATA/END_6	129	48	117	16	credit	菅原(ボカンと出産)直子
+end.name.obana	DATA/END_6	8	64	120	16	credit	尾鼻(システムチェンジ)直人
+end.name.tsmusic1	DATA/END_6	129	64	119	16	credit	(有)ティーズミュージッ	wraps to end.name.tsmusic2
+end.name.tsmusic2	DATA/END_6	8	80	16	16	credit	ク
+end.name.ozawa	DATA/END_6	26	80	55	16	credit	小沢 和美
+end.name.shintani	DATA/END_6	89	80	56	16	credit	新谷 祐樹
+end.name.yamamoto3	DATA/END_6	152	80	56	16	credit	山元 健司
+end.name.yokoyama1	DATA/END_6	216	80	25	16	credit	横山	wraps to end.name.yokoyama2
+end.name.yokoyama2	DATA/END_6	8	96	16	16	credit	祥
+end.name.taguchi	DATA/END_6	25	96	49	16	credit	田口 真之
+end.name.higashino	DATA/END_6	74	96	56	16	credit	東野 好克
+end.name.tani	DATA/END_6	137	96	40	16	credit	谷 宗広
+end.name.hayase	DATA/END_6	185	96	47	16	credit	速瀬 陽	reading uncertain
+end.name.midori1	DATA/END_6	240	96	8	16	credit	緑	wraps to end.name.midori2
+end.name.midori2	DATA/END_6	8	112	24	16	credit	陽太
+end.name.sasaki	DATA/END_6	41	112	49	16	credit	佐々木みどり
+end.name.obana2	DATA/END_6	97	112	79	16	credit	おばな なおと
+end.head.coop	DATA/END_6	185	112	30	16	credit	協力
+end.role.prod3	DATA/END_6	8	128	62	16	credit	プロデューサー
+end.role.exec	DATA/END_6	74	128	43	16	credit	総指揮
+end.role.prod4	DATA/END_6	121	128	28	16	credit	制作
+end.role.publisher	DATA/END_6	149	128	77	16	credit	企画・発売
+end.name.iseki	DATA/END_6	8	144	57	16	credit	井関 正隆
+end.name.kadohara	DATA/END_6	72	144	57	16	credit	門原 悠太
+end.name.takeuchi	DATA/END_6	137	144	44	16	credit	竹内 巧
+end.name.sonypcl	DATA/END_6	186	144	58	16	credit	ソニーPCL
+end.name.mizuno	DATA/END_6	8	160	121	16	credit	(株)水野プロダクション
+end.name.ishigaya	DATA/END_6	49	176	56	16	credit	石谷 浩二
+end.name.oyama	DATA/END_6	112	176	57	16	credit	大山 誉展
+end.name.eleven	DATA/END_6	8	192	68	16	credit	(株)イレブン
+end.name.banpresto	DATA/END_6	81	192	86	16	credit	(株)バンプレスト
+end.mark.tatsu1	DATA/END_6	10	208	120	16	credit	©タツノコプロ	beside BANPRESTO
+end.mark.tatsu2	DATA/END_6	10	224	90	16	credit	タツノコプロ	beside BANPRESTO

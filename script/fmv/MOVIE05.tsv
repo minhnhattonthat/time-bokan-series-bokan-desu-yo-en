@@ -1,0 +1,25 @@
+start	end	form	speaker	jp	note
+0.00	6.38	dlg	Boyacky	ヤッターマンたちに、ゼンダマンにオタスケマン、それとヤットデタマン、イッパツマン。
+6.38	8.96	dlg	Boyacky	あと、イタダキマンと元祖ボカンもですし。
+9.78	12.18	dlg	Boyacky	どうやら全部やっつけちゃったみたいですね。
+12.40	13.78	dlg	Doronjo	ん?ってことは?
+16.00	18.00	caption	banner	大勝利	times from 2 s sheets
+17.92	21.74	dlg	Tonzura	わいらの大勝利や、ざまぁみさらせ、善玉どもー!	was: ゼンダマドーモ
+25.12	26.78	dlg	Yatterman 1	図に乗るな、ドロンボー!	was: 船に乗るな/水に乗るな
+27.76	29.52	dlg	Doronjo	こ、この声は、まさか!
+29.52	30.92	dlg	Doronbow	ヤッターマン!
+34.06	37.84	dlg	Yatterman 1	この世に悪がある限り、正義は決して消えはしない!
+38.18	40.92	dlg	Yatterman 2	何度でもよみがえり、悪を懲らしめる!
+45.60	48.10	dlg	Yatterman 1	ヤッターマン1号、ただいま参上!
+48.34	49.62	dlg	Yatterman 2	同じく2号!
+49.84	51.36	dlg	Yatterman 1	おりゃ!ケン玉パンチー!	? was: おる!ケンタパンキー; frames show the kendama hit
+53.54	56.50	dlg	Boyacky	いたー!ドロンジョ様、なんでよけるのさ!	? was: ドロンコちゃん
+56.96	58.18	dlg	Yatterman 2	シビレステッキー!	was: 死にないステッキー; frames show the shock
+60.68	63.90	dlg	Doronjo	なんだなんだい、さっき負けたくせに何の用だい
+63.90	67.32	dlg	Boyacky	そうだ、自慢のヤッターキングはボロボロだろ
+67.72	71.40	dlg	Yatterman 1	黙れドロンボー、お前たちに本当の正義を教えてやる
+71.40	75.44	dlg	Yatterman 2	正義の名にかけてあなたたちに挑戦してあげるわ
+76.30	79.46	dlg	Doronjo	そこまで言うなら勝負してやろうじゃないか
+79.88	81.50	dlg	Doronjo	ボヤッキー、トンズラー
+81.50	85.32	dlg	Doronjo	勝利を決定的にして奴らを黙らせるんだ
+85.32	86.92	dlg	Boyacky+Tonzura	アラホラサッサー!	catchphrase; was: あらほらシャッシュ
