@@ -14,7 +14,7 @@ import gfx_script
 FIRST = 0x8015DDA4
 # (first group address, file) in table order
 FILES = [(0x8015DDA4, "DATA/END_4"), (0x8015E11C, "DATA/END_5"), (0x8015E508, "DATA/END_4"), (0x8015E5AC, "DATA/END_5"),
-         (0x8015E5C8, "DATA/END_6")]
+         (0x8015E5C8, "DATA/END_6"), (0x8015E9E0, "DATA/END_4"), (0x8015E9FC, "DATA/END_6")]  # E9E0: theme song director
 
 
 def file_of(addr):

@@ -52,7 +52,7 @@ line	role_jp	name_jp	note
 51	メインプログラム	荘埜(らい)毅明	kanji and readings uncertain
 52	エネミープログラム	山下(120%)孝
 53	グラフィック	松永(キャロライン)貴男
-54		藤井(データアーティスト)恵
+54		藤井(ブタアーティスト)恵
 55		菅原(ボカンと出産)直子
 56		尾鼻(システムチェンジ)直人
 57	サウンド・SE	(有)ティーズミュージック	company
@@ -60,7 +60,7 @@ line	role_jp	name_jp	note
 59	スペシャルサンクス	新谷 祐樹 / 山元 健司	two names
 60		横山 祥 / 田口 真之	two names
 61		東野 好克 / 谷 宗広	two names
-62		速瀬 陽 / 尾鼻 陽太	two names; first reading uncertain
+62		速瀬 陰 / 尾鼻 陽太	two names; first reading uncertain
 63		藤井 緑 / 佐々木みどり	two names
 64	ゲームディレクター	おばな なおと
 65	協力	井関 正隆
@@ -77,6 +77,6 @@ line	role_jp	name_jp	note
 76	企画・発売	(株)バンプレスト	company
 77	©タツノコプロ		copyright
 78	©BANPRESTO 1998		already English
-79	(株)水野プロダクション		other cut of line 69; not seen on the roll yet
+79	ディレクター	とまとあき	theme song director; parts point into END_4
 80	©タツノコプロ		copyright, second colour
 81	©BANPRESTO 1998		already English

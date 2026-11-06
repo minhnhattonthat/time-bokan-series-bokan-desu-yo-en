@@ -8,7 +8,8 @@ title.desc2	SUBDATA/TITLE3	176	48	64	16	cells	炸裂!!
 title.desc3	SUBDATA/TITLE3	176	64	80	16	cells	ビギナーに
 title.desc4	SUBDATA/TITLE3	176	80	64	16	cells	ゲームに
 title.desc5	SUBDATA/TITLE3	176	96	64	16	cells	慣れたら
-title.desc6	SUBDATA/TITLE3	176	112	80	16	cells	各種設定が
+title.desc6a	SUBDATA/TITLE3	176	112	32	16	cells	各種
+title.desc6b	SUBDATA/TITLE3	208	112	48	16	cells	設定が
 title.desc7	SUBDATA/TITLE3	0	128	112	16	cells	おすすめよーん
 title.desc8	SUBDATA/TITLE3	0	144	112	16	cells	ドクロベェ暗躍
 title.desc9	SUBDATA/TITLE3	0	160	96	16	cells	チャレンジ!
@@ -234,7 +235,7 @@ end.name.sono	DATA/END_6	225	16	23	16	credit	荘埜	kanji uncertain; joins the n
 end.name.takeaki	DATA/END_6	8	32	61	16	credit	(らい)毅明	nickname in brackets, given name uncertain
 end.name.yamashita	DATA/END_6	72	32	73	16	credit	山下(120%)孝
 end.name.matsunaga	DATA/END_6	152	32	104	16	credit	松永(キャロライン)貴男
-end.name.fujii	DATA/END_6	8	48	113	16	credit	藤井(データアーティスト)恵
+end.name.fujii	DATA/END_6	8	48	113	16	credit	藤井(ブタアーティスト)恵
 end.name.sugawara	DATA/END_6	129	48	117	16	credit	菅原(ボカンと出産)直子
 end.name.obana	DATA/END_6	8	64	120	16	credit	尾鼻(システムチェンジ)直人
 end.name.tsmusic1	DATA/END_6	129	64	119	16	credit	(有)ティーズミュージッ	wraps to end.name.tsmusic2
@@ -247,7 +248,7 @@ end.name.yokoyama2	DATA/END_6	8	96	16	16	credit	祥
 end.name.taguchi	DATA/END_6	25	96	49	16	credit	田口 真之
 end.name.higashino	DATA/END_6	74	96	56	16	credit	東野 好克
 end.name.tani	DATA/END_6	137	96	40	16	credit	谷 宗広
-end.name.hayase	DATA/END_6	185	96	47	16	credit	速瀬 陽	reading uncertain
+end.name.hayase	DATA/END_6	185	96	47	16	credit	速瀬 陰	given name reading uncertain
 end.name.midori1	DATA/END_6	240	96	8	16	credit	緑	wraps to end.name.midori2
 end.name.midori2	DATA/END_6	8	112	24	16	credit	陽太
 end.name.sasaki	DATA/END_6	41	112	49	16	credit	佐々木みどり

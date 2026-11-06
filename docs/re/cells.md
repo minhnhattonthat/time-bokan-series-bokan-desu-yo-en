@@ -46,7 +46,9 @@ These rows are cut across quads drawn apart, so one rect is not one budget:
 - `go.fin` was three 48x48 quads drawn 64 px apart. Lettered as one rect it came out "TH E EN D", so it is now `go.fin1-3`,
   one word per quad.
 - `go.game` and `go.over` are stacked pieces; letter them per quad in phase 7.
-- `title.desc6` and every split `end.*` row: see Credits below.
+- `title.desc6` was split into `title.desc6a` (32 px, line 1 of the Options text) and `title.desc6b` (47 px, line 3). Each
+  description draws four cells: Normal desc1/2/3/7, Special desc8/4/5/9, Options desc6a/10/6b/11.
+- Every split `end.*` row: see Credits below.
 
 ## Marker tour (phase 5)
 

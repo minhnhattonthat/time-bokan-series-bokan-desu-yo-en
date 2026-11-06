@@ -1,0 +1,109 @@
+id	en	class	note
+title.normal	Normal Game
+title.special	Special Game
+title.options	Options
+title.copy	Tatsunoko Production	sprite
+title.desc1	Evil power		Normal, line 1 of 4
+title.desc2	erupts!!		Normal, line 2
+title.desc3	Great for		Normal, line 3
+title.desc7	beginners, hon!		Normal, line 4; よーん is flirty
+title.desc8	Dokurobey's		Special, line 1
+title.desc4	plots!		Special, line 2
+title.desc5	Experts:		Special, line 3
+title.desc9	try this!		Special, line 4
+title.desc6a	Set		Options, line 1
+title.desc10	all kinds of		Options, line 2
+title.desc6b	things		Options, line 3
+title.desc11	as you like!		Options, line 4
+title.hint_select	Select	tag
+title.hint_ok	OK	tag
+title.hint_back1	Back	tag
+title.hint_back2	Back	tag
+title.btn_select	Pick		Select is over the 32 px word cell
+title.btn_ok	OK
+title.btn_back	Back
+opt.buttons	Controls
+opt.credit	Credits		continues; the number sits beside it
+opt.sound	Sound
+opt.voice	Voice
+opt.extras	Extras
+opt.player1	1 Player	tag
+opt.pad	Pad	tag
+cfg.rolling	Rolling
+cfg.big1	Big Mecha
+cfg.big2	Big Mecha
+cfg.big3	Big Mecha
+cfg.big4	Big Mecha
+cfg.bomb1	Skull Bomb
+cfg.bomb2	Skull Bomb
+cfg.bomb3	Skull Bomb
+cfg.bomb4	Skull Bomb
+cfg.shot1	Shot
+cfg.shot2	Shot
+cfg.shot3	Shot
+cfg.shot4	Shot
+cfg.back	Back
+cfg.select	Pick
+cfg.ok	OK
+cfg.stamp1	OK		決 stamp
+cfg.stamp2	OK
+cfg.stamp3	OK
+plate.gaikotu	Gaikotts
+plate.syareko	Skull Mecha
+plate.andoro	Andromedama
+plate.rakuda	Time Rakuda
+plate.bagi	Skull Buggy
+plate.denden	Denden Mecha
+plate.doron	Doronjo Car
+plate.boya	Boyacky Car
+plate.tonzura	Tonzra Car
+plate.dokuro	Dokurobey Car
+sel.repair	In the|Shop	hud	整備中: ship not available yet
+extra.m00	Prologue A
+extra.m01	Getting Cocky, Part 1
+extra.m02	Getting Cocky, Part 2
+extra.m03	Getting Cocky, Part 3
+extra.m04	The Good Guys' Challenge
+extra.m05	Settled by Self-Destruct
+extra.m06	Ending
+extra.m07	Prologue B
+extra.m08	Doku-chan's Pep Talk, Part 1
+extra.m09	Special Training Ahead
+extra.m10	New Machine Giveaway
+extra.m11	Doku-chan's Pep Talk, Part 2
+extra.m12	Dokurobey's Betrayal
+extra.m13	The Good Guys Attack!
+extra.m14	Punishment Time!
+hud.gameover	Game Over
+hud.danger	Danger	tag
+hud.danger_c	Danger	tag
+go.game	GAME		large banner; letter per quad in phase 7
+go.over_o	O		first letter of OVER, packed beside GAME; phase 7 may merge
+go.over	VER		rest of OVER
+go.fin1	THE
+go.fin2	END
+go.fin3	!
+tag.doron	Doronjo Car
+tag.boya	Boyacky Car
+tag.tonzr	Tonzra Car
+tag.denden	Denden Mecha
+tag.andoro	Andromedama
+tag.dokurobe	Andromedama		same tag as ANDORO
+tag.gaikotu	Gaikotts
+tag.rakuda	Time Rakuda
+tag.syareko	Skull Mecha
+tag.sya_bagi	Skull Buggy
+card.st1	The Hawk Has|Landed Again, Koron!		parody of The Eagle Has Landed; Omotchama's tic
+card.st2	Doronbow in the|Sleepless Forest,|Zenderman!		parody of Sleeping Beauty's forest
+card.st3	A Rendezvous with|Giant Heroes in|Another Dimension!
+card.st4	Enter with a Bang!|The Original|Time Mecha, Peccha!		Perasuke's tic
+card.st5	Justice's Trump Card!|Yatterwan FZ, Koron!
+card.stf	Shock Showdown!|Dokurobey, Ruler|of the Shadows!
+card.sts	Racing to Battle:|Odate-Buta, Koron!
+sprite.ikari	MAD		怒
+sprite.harawata	Guts		on a monitor
+sprite.itadaki1	Itadakiman
+sprite.itadaki2	Itadakiman
+sprite.itadaki3	Itadakiman
+sprite.sign1	Private! Keep Out
+sprite.sign2	Doron Company		reading uncertain
