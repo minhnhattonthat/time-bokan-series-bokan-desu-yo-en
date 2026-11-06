@@ -132,11 +132,10 @@ class Disc:
             if i == n - 1 and e.size % 2048:
                 tail = e.size % 2048
                 new = new[:tail] + bytes(sec[USER + tail:USER + 2048])
-            if bytes(sec[USER:USER + 2048]) != new:
-                sec[USER:USER + 2048] = new
-                form1_seal(sec)
-                self.f.seek((e.lba + i) * SECTOR)
-                self.f.write(sec)
+            sec[USER:USER + 2048] = new
+            form1_seal(sec)
+            self.f.seek((e.lba + i) * SECTOR)
+            self.f.write(sec)
 
 
 if __name__ == "__main__":

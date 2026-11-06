@@ -10,7 +10,8 @@ Skill: translate-retro-game (Claude Code: plugin, enabled in .claude/settings.js
 - Survey:   `python -X utf8 tools/tim_sheets.py work/x work/recon/tims` (all TIMs to contact sheets) and `tools/str_frames.py` (FMV samples)
 - Smoke:    `python -X utf8 $SKILL/scripts/emu.py "rom/Time Bokan Series - Bokan desu yo (Japan).cue" --out work/qa/smoke --route tools/routes/boot.txt --smoke`
 - Warp:     `python -X utf8 tools/debug/warp_all.py [--rom CUE] [--states] [scene ...]` (cold boot to any scene, shots in `work/qa/warp/<scene>/`; scene list `tools/debug/scenes.lua`, addresses `docs/re/state.md`)
-- Build, release: not written yet (phases 3, 9); add each here when it exists. Never publish without the user.
+- Build:    `python -X utf8 tools/build.py` (disc in `build/`; no edits yet, so it equals the dump, held by `tests/test_build.py`)
+- Release: not written yet (phase 9); add it here when it exists. Never publish without the user.
 - Clean:    `python -X utf8 tools/clean.py` (published projects: lists rebuildable/downloadable files; `--yes` deletes)
 
 ## Paths

@@ -42,22 +42,39 @@ def rgba(c, opaque=False):
     return (r * 255 // 31, g * 255 // 31, b * 255 // 31, a)
 
 
+def pixels(t, data):
+    """Stored pixel values, row by row: CLUT indices at 4 and 8 bpp, raw words at 16 bpp, raw bytes at 24 bpp."""
+    w, h = t.px_wh
+    px = data[t.px_off:t.px_off + w * h * 2]
+    if t.bpp == 4:
+        return [v for byte in px for v in (byte & 15, byte >> 4)]
+    return list(struct.unpack(f"<{w * h}H", px)) if t.bpp == 16 else list(px)
+
+
+def with_pixels(t, data, vals):
+    """data with its pixel block replaced by vals (as from pixels); header, CLUT and trailing bytes stay."""
+    if t.bpp == 4:
+        px = bytes(lo | hi << 4 for lo, hi in zip(vals[::2], vals[1::2]))
+    else:
+        px = struct.pack(f"<{len(vals)}H", *vals) if t.bpp == 16 else bytes(vals)
+    assert len(px) == t.px_wh[0] * t.px_wh[1] * 2, "pixel count differs from the TIM's"
+    return data[:t.px_off] + px + data[t.px_off + len(px):]
+
+
 def to_image(t, data, clut=0):
     from PIL import Image
     w, h = t.px_wh
-    px = data[t.px_off:t.px_off + w * h * 2]
     cw = t.clut_wh[0]
     pal = [rgba(c) for c in t.clut[clut * cw:(clut + 1) * cw]] if t.clut else None
+    vals = pixels(t, data)
     if t.bpp == 4:
-        vals = [v for byte in px for v in (byte & 15, byte >> 4)]
         size = (w * 4, h)
     elif t.bpp == 8:
-        vals, size = px, (w * 2, h)
+        size = (w * 2, h)
     elif t.bpp == 16:
-        vals = struct.unpack(f"<{w * h}H", px)
         pal, size = None, (w, h)
     else:
-        return Image.frombytes("RGB", (w * 2 // 3, h), px).convert("RGBA")
+        return Image.frombytes("RGB", (w * 2 // 3, h), bytes(vals)).convert("RGBA")
     img = Image.new("RGBA", size)
     if pal is None and t.bpp in (4, 8):
         pal = [(v * 255 // (2 ** t.bpp - 1),) * 3 + (255,) for v in range(2 ** t.bpp)]  # no CLUT: greyscale
