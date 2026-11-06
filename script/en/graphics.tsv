@@ -2,7 +2,7 @@ id	en	class	note
 title.normal	Normal Game
 title.special	Special Game
 title.options	Options
-title.copy	Tatsunoko Production	sprite
+title.copy	(C) Tatsunoko Pro	sprite
 title.desc1	Evil power		Normal, line 1 of 4
 title.desc2	erupts!!		Normal, line 2
 title.desc3	Great for		Normal, line 3
@@ -15,7 +15,7 @@ title.desc6a	Set		Options, line 1
 title.desc10	all kinds of		Options, line 2
 title.desc6b	things		Options, line 3
 title.desc11	as you like!		Options, line 4
-title.hint_select	Select	tag
+title.hint_select	Pick	tag
 title.hint_ok	OK	tag
 title.hint_back1	Back	tag
 title.hint_back2	Back	tag
@@ -48,7 +48,7 @@ cfg.ok	OK
 cfg.stamp1	OK		決 stamp
 cfg.stamp2	OK
 cfg.stamp3	OK
-plate.gaikotu	Gaikotts
+plate.gaikotu	Gaikottsu
 plate.syareko	Skull Mecha
 plate.andoro	Andromedama
 plate.rakuda	Time Rakuda
@@ -60,17 +60,17 @@ plate.tonzura	Tonzra Car
 plate.dokuro	Dokurobey Car
 sel.repair	In the|Shop	hud	整備中: ship not available yet
 extra.m00	Prologue A
-extra.m01	Getting Cocky, Part 1
-extra.m02	Getting Cocky, Part 2
-extra.m03	Getting Cocky, Part 3
+extra.m01	Getting Cocky 1
+extra.m02	Getting Cocky 2
+extra.m03	Getting Cocky 3
 extra.m04	The Good Guys' Challenge
 extra.m05	Settled by Self-Destruct
 extra.m06	Ending
 extra.m07	Prologue B
-extra.m08	Doku-chan's Pep Talk, Part 1
+extra.m08	Doku-chan's Pep Talk 1
 extra.m09	Special Training Ahead
 extra.m10	New Machine Giveaway
-extra.m11	Doku-chan's Pep Talk, Part 2
+extra.m11	Doku-chan's Pep Talk 2
 extra.m12	Dokurobey's Betrayal
 extra.m13	The Good Guys Attack!
 extra.m14	Punishment Time!
@@ -89,7 +89,7 @@ tag.tonzr	Tonzra Car
 tag.denden	Denden Mecha
 tag.andoro	Andromedama
 tag.dokurobe	Andromedama		same tag as ANDORO
-tag.gaikotu	Gaikotts
+tag.gaikotu	Gaikottsu
 tag.rakuda	Time Rakuda
 tag.syareko	Skull Mecha
 tag.sya_bagi	Skull Buggy

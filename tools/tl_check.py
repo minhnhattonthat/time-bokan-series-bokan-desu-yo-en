@@ -18,7 +18,7 @@ import gfx_script
 EN = ROOT / "script" / "en"
 SKIP_FORMS = {"keep", "scribble", "credit"}
 ROLE_W, ROW_W = 112, 304  # cells.md: role at dx -120, name at dx 0, anchored at screen x 160; screen keeps 8 px each side
-CREDIT_ROOM = 12700  # END_4-6 packed at 14 px rows (11,160 px at 16 px rows in cells.md); glyphs are at most 14 tall
+CREDIT_ROOM = 12700  # END_4-6 packed at 14 px rows (11,160 px at 16 px rows in cells.md); glyphs are at most 12 tall
 LYRIC_W = 270
 MIN_SHOW = 1.2  # s: a short row stays up this long, unless the next row starts first
 SONG_SHOW = 5.0
@@ -38,6 +38,8 @@ def budgets():
         if not boxes:
             boxes = [list(map(int, b["rect"].split(",")))]
         out[b["id"]] = (min(u[2] for u in boxes), min(u[3] for u in boxes))
+        if b["id"].startswith("extra."):  # the quad is a 128 px window scrolled over rows at a 16 px pitch (cells.md)
+            out[b["id"]] = (out[b["id"]][0], int(b["rect"].split(",")[3]))
     out["go.game"] = (128, 64)  # two 64 px quads drawn side by side, lettered as one strip (cells.md)
     return out
 

@@ -4,6 +4,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "tools"))
+import gfx
 import tl_check
 
 
@@ -19,6 +20,11 @@ def test_avoided_spelling_and_non_ascii_are_caught():
     tl_check.check_text("y", "café", terms, errors)
     tl_check.check_term("z", "トンズラー", "Someone else", terms, errors)
     assert len(errors) == 3
+
+
+def test_extras_rows_are_capped_at_their_16_px_pitch():
+    assert tl_check.budgets()["extra.m08"][1] == 16
+    assert gfx.glyphs("Doku-chan's Pep Talk, Part 1", "menu")[0].shape[0] > 16  # apostrophe plus comma: must fail the gate
 
 
 def test_subs_stretch_short_rows_but_never_past_the_next():

@@ -54,7 +54,7 @@ Doronbow, Zenderman, Rescueman, Ippatsuman, Itadakiman. Hepburn or series usage 
 | 巨大メカ | Big Mecha | | | Mech |
 | デンデンメカ | Denden Mecha | | | |
 | シャレコウベ / シャレコーベ | Skull | | old word for skull: Skull Mecha, Skull Buggy | |
-| ガイコッツ | Gaikotts | | | |
+| ガイコッツ | Gaikottsu | | Hepburn; no official source found | Gaikotts |
 | アンドロメダマ | Andromedama | | | |
 | タイムラクーダ | Time Rakuda | | | |
 | アラホラサッサ | Arahora-sassa | | the gang's "yes ma'am"; kept as sound | |
