@@ -116,12 +116,56 @@ def test_sprite_packet_decodes():
     assert (p.vx, p.vy) == (704 + 16, 256 + 32)
 
 
+needs_rom = pytest.mark.skipif(not (ROOT / "rom" / credits.TRACK1).exists(), reason="needs the dump in rom/")
+
+
+@needs_rom
 def test_credit_table_covers_every_group():
-    if not (ROOT / "work" / "x" / "S10OVER.BIN").exists():
-        return
     rows = (ROOT / "script" / "credits.tsv").read_text(encoding="utf-8").splitlines()[1:]
-    assert len(rows) == len(credits.lines())
-    assert [r.split("\t")[0] for r in rows] == [str(i) for i in range(1, len(rows) + 1)]
+    assert len(rows) == len(credits.lines()) == credits.LINES
+    assert [r.split("\t")[0] for r in rows] == [str(i) for i in range(len(rows))]
+
+
+@needs_rom
+def test_credit_pages_draw_each_line_once():
+    drawn = [p[1] for page in credits.pages() for p in page]
+    assert len(drawn) == len(set(drawn))
+    assert set(range(80)) - set(drawn) == {77, 78}  # placed by code at 8015BCE4, not by the page script
+
+
+@needs_rom
+def test_credit_edit_keeps_every_group_count_and_stays_in_range():
+    d = credits.overlay()
+    new = credits.edit_overlay(d)
+    assert len(new) == len(d)
+    a, b = credits.lines(d), credits.lines(new)
+    assert [len(g.parts) for g in a] == [len(g.parts) for g in b]
+    for g in b[1:18]:
+        assert all(p.u + p.w <= 256 and p.v + p.h <= 256 for p in g.parts)
+
+
+def test_flat_keeps_one_background_when_the_margin_holds_a_mark():
+    clut = [0, 0x7FFF, 0x0421] + [0] * 13
+    px = np.full((8, 8), 2)
+    px[3:5, 2:6] = 1
+    margin = np.tile(np.array([[1, 2, 1], [2, 2, 2]]), (4, 1))  # banded: without flat, the background would be per row
+    assert (gfx.sampled_inks(px, clut, margin, flat=True)[0] == 2).all()
+
+
+def test_grown_rect_stays_in_box_and_off_neighbours():
+    assert gfx.widened((10, 0, 20, 16), 30, 16, (0, 0, 64, 16), []) == (5, 0, 30, 16)
+    assert gfx.widened((50, 0, 14, 16), 30, 16, (0, 0, 64, 16), []) == (34, 0, 30, 16)
+    with pytest.raises(ValueError):
+        gfx.widened((0, 0, 20, 16), 70, 16, (0, 0, 64, 16), [])
+    with pytest.raises(ValueError):
+        gfx.widened((0, 0, 20, 16), 30, 16, (0, 0, 64, 16), [(25, 0, 8, 16)])
+
+
+def test_inpaint_paints_only_the_mask_and_avoids_the_ink():
+    clut = [0, 0x7FFF, 0x0001, 0x0400, 0x0421]
+    px = np.array([[3, 3, 3], [3, 1, 3], [3, 3, 3]])
+    out = gfx.inpainted(px, px == 1, clut, (1, 2))
+    assert out[1, 1] == 3 and (out[px != 1] == 3).all()
 
 
 def test_budgets_cover_rows():

@@ -126,19 +126,12 @@ def read_rows(movie):
     return rows
 
 
-def burn_all(track, text_of, jobs=None):
-    """Writes every movie's new sectors into track. text_of(movie, n, row) -> subtitle or None. Returns stats by movie."""
+def burn_all(track, subs_of, jobs=None):
+    """Writes every movie's new sectors into track. subs_of(movie) -> [(start, end, text)]. Returns stats by movie."""
     d = disc.Disc(track)
     entries = {os.path.basename(p).split(".")[0]: e for p, e in d.files.items() if p.startswith("/STR/")}
     d.f.close()
-    jobs_list = []
-    for movie, e in sorted(entries.items()):
-        subs = []
-        for n, row in enumerate(read_rows(movie), 1):
-            s = text_of(movie, n, row)
-            if s:
-                subs.append((row[0], row[1], s))
-        jobs_list.append((track, e, movie, subs))
+    jobs_list = [(track, e, movie, subs_of(movie)) for movie, e in sorted(entries.items())]
     report = {}
     with cf.ProcessPoolExecutor(jobs or min(8, os.cpu_count())) as ex:
         results = list(ex.map(burn_movie, *zip(*jobs_list)))
@@ -151,6 +144,7 @@ def burn_all(track, text_of, jobs=None):
     return report
 
 
-def marker_text(movie, n, row):
+def marker_subs(movie):
     """Marker build: the row's id on every spoken or captioned row, then a line that fills the width."""
-    return f"{movie[5:]}.{n} {MARKER}" if row[2] in ("dlg", "caption", "form") else None
+    return [(row[0], row[1], f"{movie[5:]}.{n} {MARKER}") for n, row in enumerate(read_rows(movie), 1)
+            if row[2] in ("dlg", "caption", "form")]

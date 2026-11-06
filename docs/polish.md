@@ -17,8 +17,8 @@ run while a line is unticked.
 - [ ] `sprite.sign2` "Doron Company" - reading of the sign is uncertain; check a zoomed shot in phase 8.
 - [ ] MOVIE00.1, 01.14, 01.18, 04.1, 05.14, 05.15, 06.7, 07.8, 13.7 - also marked `?` in the source. MOVIE04.1 most of all: raw reading こりゃいけません is the reverse of the corrected こりゃいけまっせ. Ear-check, or waive.
 - [ ] Credit line 51 (荘埜(らい)毅明) - kanji and readings uncertain. Check against an official credit or waive.
-- [ ] `sprite.sign2` overruns its quad at x=116: phase 7 moves the rect left into the quad, or re-letters both sign lines.
-- [ ] MOVIE05.5 overlaps the next subtitle by 0.08 s; trim the end to 17.92 when wiring `subs`.
-- [ ] `tools/tl_check.py` sums credit strips rather than packing, and has no honorific check (`references/translation.md` §Validation).
-- [ ] Fill the template briefs before phases 8 and 9: `docs/reviewer-brief.md`, `docs/story-reviewer-brief.md`, `docs/visual-qa-brief.md`, `docs/translator-brief.md` (it also runs `tools/batches.py`, which doesn't exist here).
-- [ ] `script/fmv/*.tsv` speaker column: 65 rows say Dokurobee, Tonzura or Yatter-Wan, the glossary's avoided spellings. Normalize.
+- [x] `sprite.sign2` overruns its quad at x=116: fixed, `gfx.widened` keeps it inside the quad.
+- [x] MOVIE05.5 overlaps the next subtitle by 0.08 s: fixed, `tl_check.subs` ends a line where the next starts.
+- [x] `tools/tl_check.py` sums credit strips: fixed, it runs the real pack. Honorific check added for 様; ちゃん and さん hit too many other words.
+- [x] Template briefs filled: `docs/reviewer-brief.md`, `docs/story-reviewer-brief.md`, `docs/visual-qa-brief.md`, `docs/translator-brief.md`, `docs/playtester-brief.md`.
+- [x] `script/fmv/*.tsv` speaker column: normalized to Dokurobey, Tonzra, Yatterwan.

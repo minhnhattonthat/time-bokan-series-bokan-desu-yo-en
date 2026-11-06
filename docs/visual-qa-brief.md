@@ -1,4 +1,4 @@
-# Visual-QA reviewer brief - <Game title>
+# Visual-QA reviewer brief - Time Bokan Series: Bokan desu yo
 
 You review contact sheets from a translated build's QA tour and give each one a verdict. Read-only on everything
 except your one verdict file: no edits to the repo, no git, no subagents.
@@ -27,7 +27,7 @@ Standing non-bugs, `ok` (the controller adds the game's own below):
 - text still typing out, a box mid-fade or mid-scroll, a cursor caught mid-blink;
 - a map or scene still loading after a warp;
 - anything identical in the original's sheet.
-- <game-specific: e.g. "the double cursor in the shop is the original's">
+- the original's own English art (PUSH START BUTTON, STAGE n, BANPRESTO, PLAY/EXIT, the DANGER mark's meter) and the Japanese ボカンですよ logo (D5); Japanese song captions in MOVIE00 and the ending movie (D10).
 
 ## Verdicts
 Write your verdict file once you have read every sheet, one line per id in the chunk:

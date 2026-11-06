@@ -1,4 +1,5 @@
 line	role_jp	name_jp	note
+0	声の出演		section heading
 1	ドロンジョ	小原 乃梨子
 2	ボヤッキー	八奈見 乗児
 3	トンズラー	たてかべ 和也
@@ -16,7 +17,7 @@ line	role_jp	name_jp	note
 15	アマッタン・他	川上 とも子
 16	ナレーター	鈴置 洋孝
 17	ふくろうメカ	山本 正之
-18	声の出演	主題歌	two section headings in one group
+18	アニメーション・スタッフ		section heading, drawn from END_5
 19	監督/絵コンテ	笹川 ひろし
 20	演出	原 征太郎
 21	ゲストメカデザイン	小川 浩
@@ -42,7 +43,7 @@ line	role_jp	name_jp	note
 41	録音スタジオ	整音スタジオ	company
 42	制作管理	柴田 勝
 43	プロデューサー	大倉 宏俊
-44	アニメーション・スタッフ		section heading
+44	主題歌		section heading, drawn from END_4
 45	「ボカンと一発!ドロンボー」		song title
 46	作詞・作曲	山本 正之
 47	編曲	神保 正明

@@ -1,4 +1,5 @@
 line	role	name	note
+0	Voice Cast		section heading
 1	Doronjo	Noriko Ohara
 2	Boyacky	Joji Yanami
 3	Tonzra	Kazuya Tatekabe
@@ -16,7 +17,7 @@ line	role	name	note
 15	Amattan, etc.	Tomoko Kawakami
 16	Narrator	Hirotaka Suzuoki
 17	Owl Mecha	Masayuki Yamamoto
-18	Voice Cast	Theme Song	two section headings in one group
+18	Animation Staff		section heading
 19	Director,|Storyboards	Hiroshi Sasagawa
 20	Episode Director	Seitaro Hara
 21	Guest Mecha|Design	Hiroshi Ogawa
@@ -42,7 +43,7 @@ line	role	name	note
 41	Recording Studio	Seion Studio
 42	Production|Manager	Masaru Shibata
 43	Producer	Hirotoshi Okura
-44	Animation Staff		section heading
+44	Theme Song		section heading
 45	"Bokan to Ippatsu! Doronbow"		song title; first game's title, so kept romanized
 46	Lyrics, Music	Masayuki Yamamoto
 47	Arrangement	Masaaki Jinbo
@@ -75,7 +76,7 @@ line	role	name	note
 74	Executive|Producer	HACHIRO.N
 75	Production	Eleven Co., Ltd.
 76	Planning, Publishing	Banpresto Co., Ltd.
-77	(C) Tatsunoko Production
+77	(C) Tatsunoko Pro		keeps the original (C) cell, which line 78 also draws
 78	(C) BANPRESTO 1998		English in the original
 79	Director	Aki Tomato	theme song director, draws from END_4
 80	(C) Tatsunoko Production		second colour

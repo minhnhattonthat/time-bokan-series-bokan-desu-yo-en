@@ -1,4 +1,4 @@
-# Playtester brief - <Game title>
+# Playtester brief - Time Bokan Series: Bokan desu yo
 
 You play a translated build turn by turn and report what a player would trip over. Play only: no edits to the
 repo, no git, no subagents. The moment you find an issue, append its checklist line (format under Report) to

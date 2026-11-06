@@ -74,15 +74,17 @@ What it showed:
 - **Bar labels are row gradients:** background and fill use one palette index per row, so a flat clear wipes the bar art.
   `gfx.sampled_inks` samples per row when no one colour dominates.
 - **See-through atlases:** a rect with index 0 in it clears to 0, since a packed strip's margin holds other labels.
-- **Rects holding a button mark** (`title.btn_*`) must hug the word or the mark is erased. `cfg.back/select/ok` still
-  include their marks: shrink them the same way in phase 7.
+- **Rects holding a button mark** (`title.btn_*`, `cfg.back/select/ok`) must hug the word or the mark is erased.
 - **Glyph torture:** all printable ASCII shows in Jersey 10 at 20 px. Bangers shows all but `$ ( )`, which the torture
   dropped as taller than its 16 px rows; they are in the font, but no shot proves them.
 
-Known rough spots for phase 7: credit strips must take core and outline colours explicitly (a rect wider than its
-original word sampled white as fill, with the line's colour as outline); `hud.gameover` fill comes out banded; the plate
-background is a flat patch over stone texture; white text without an outline washes out on the Extras yellow bar, so
-the list needs the outlined class.
+Rough spots still open after phase 7: `hud.gameover` fill is banded and the plate background is a flat patch over stone
+texture (phase 8 judges both). Extras rows all take the inks of `extra.m00`, as a wider rect sampled striped fill.
+
+**English build (phase 7):** `gfx.english_rows` letters `script/en/graphics.tsv`, growing a rect around its centre to the text
+when needed, inside the drawn quad and clear of other rows. `gfx.go_banner` draws GAME and OVER across the split quads of
+`GO_S0`. `gfx.lyric_card` paints out each card's two ink indices by diffusion from neighbours, mapped back to the palette,
+then letters title and summary on the line rows. `tools/build_check.py` fails on any change outside these.
 
 ## Width gate
 
@@ -109,19 +111,25 @@ scaled to 77%. No more Japanese found, but the scaling could hide very small kan
 
 `tag.*` strips (y 240 of the ship TIMs): the ship zoom doesn't draw them. **Guess:** unused leftovers.
 
-## Credits (`S10OVER.BIN`, 8015DDA4-8015EA34)
+## Credits (`S10OVER.BIN`, 8015DD88-8015EA34)
 
-The roll draws one group per line: role at dx -120, name at dx 0, anchored at screen x 160, dy -8 for 16 px rows. So each
-line has about 112 px for the role and 140 px for the name, and the build can rewrite parts to point at new English
-strips. Japanese words are often split into shared pieces (`1号` = one cell used by four lines). Rewriting replaces those
-pieces with one strip each.
+All of the roll is data, read by disassembly at 8015A848 and 8015BB7C, and it's not a scroll but a list of pages:
 
-Rows `end.*` in `script/graphics.tsv` are pieces of the old layout, not translation units. Phase 6 translates by group:
-role and name per line.
+| Address | What |
+|---|---|
+| 8015EA4C | u32 group pointer per line, 82 lines (line = index). Line 0 is the 声の出演 heading |
+| 8015EF4C | per line, 80 entries: u32 slot (TIM `END_<slot>`, texture page 0x15 + slot), u32 palette (CLUT row 0x1F0 + n) |
+| 8015EC0C | u16 page script: -2, -3, -4 + arg are scene commands, -1 ends; else duration, n, then n x (line, x, y, end) |
 
-Proven in game (`script/spike_cells.tsv`, `cells.with_edits`): a name lettered as one strip and drawn through two rewritten
-parts reads as one line. A group's part count is fixed, and spare parts must sample transparent pixels (untested).
+- Every line has an explicit y on its page, so pages can be re-spaced freely. A page opens up only if a two-row role would
+  collide; the curtain hides anything above screen y 38.
+- Lines 77 and 78 are placed by code (8015BCE4), not by the script. Lines 80 and 81 have no ART entry and are never drawn.
+- The old `credits.py FILES` table guessed the TIM by table stretch and was wrong at the edges: line 18 is アニメーション・スタッフ
+  from END_5, 44 is 主題歌 from END_4, 0 was missing. The English followed that error until phase 7 fixed it.
 
-**Room:** three 256x256 TIMs give about 11,160 px of 16 px rows. A rough estimate from JP lengths puts all strings at 18,500
-px in Jersey 10 at 20 px and 14,200 px in Jersey 15, and that estimate runs high. **Not proven to fit:** phase 7 must pack the real
-English first, share repeated strings, and have a fallback (smaller class for names, or another free TIM) if it overflows.
+**English:** `credits.py` packs one strip per string on 13 px shelves, first-fit decreasing, per TIM, all with one baseline,
+and rewrites each line's parts. END_4 used 15 shelves, END_5 16, END_6 19. Lettered fill index 15 (the line's colour) with
+outline 3 (roles) or 2 (names), as the Japanese. Spare parts sample transparent pixel (0, 0), proven in game. Part scale
+does nothing (see Font spike). Headings and the kept (C) cell, BANPRESTO and 1998 stay where they were (`credits.KEEP`).
+
+Rows `end.*` in `script/graphics.tsv` are pieces of the old layout, not translation units.

@@ -4,7 +4,7 @@ start	end	form	speaker	jp	note
 9.78	12.18	dlg	Boyacky	どうやら全部やっつけちゃったみたいですね。
 12.40	13.78	dlg	Doronjo	ん?ってことは?
 16.00	18.00	caption	banner	大勝利	times from 2 s sheets
-17.92	21.74	dlg	Tonzura	わいらの大勝利や、ざまぁみさらせ、善玉どもー!	was: ゼンダマドーモ
+17.92	21.74	dlg	Tonzra	わいらの大勝利や、ざまぁみさらせ、善玉どもー!	was: ゼンダマドーモ
 25.12	26.78	dlg	Yatterman 1	図に乗るな、ドロンボー!	was: 船に乗るな/水に乗るな
 27.76	29.52	dlg	Doronjo	こ、この声は、まさか!
 29.52	30.92	dlg	Doronbow	ヤッターマン!
@@ -22,4 +22,4 @@ start	end	form	speaker	jp	note
 76.30	79.46	dlg	Doronjo	そこまで言うなら勝負してやろうじゃないか
 79.88	81.50	dlg	Doronjo	ボヤッキー、トンズラー
 81.50	85.32	dlg	Doronjo	勝利を決定的にして奴らを黙らせるんだ
-85.32	86.92	dlg	Boyacky+Tonzura	アラホラサッサー!	catchphrase; was: あらほらシャッシュ
+85.32	86.92	dlg	Boyacky+Tonzra	アラホラサッサー!	catchphrase; was: あらほらシャッシュ

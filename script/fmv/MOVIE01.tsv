@@ -14,13 +14,13 @@ start	end	form	speaker	jp	note
 45.76	49.84	dlg	Boyacky	それより着替えたらどうです、ボクちゃん目のやり場に困っちゃうなぁ。
 50.04	51.00	dlg	Doronjo	じろじろ見ながら、	was: ティラジラ; ?
 51.00	52.32	dlg	Doronjo	何言ってるんだい!
-52.34	54.20	dlg	Tonzura	ただいま、行ってきたで。
+52.34	54.20	dlg	Tonzra	ただいま、行ってきたで。
 54.50	56.68	dlg	Doronjo	あら、トンズラー、どこ行ってたんだい?
-57.38	59.40	dlg	Tonzura	ヤッターマンたちのところですね。	? may be Boyacky
+57.38	59.40	dlg	Tonzra	ヤッターマンたちのところですね。	? may be Boyacky
 60.02	62.86	dlg	Boyacky	実はね、挑戦状を配らせに行かせたんです。
-63.18	64.94	dlg	Tonzura	ちゃんと配ってきたまんねん。	was: きたまんね
+63.18	64.94	dlg	Tonzra	ちゃんと配ってきたまんねん。	was: きたまんね
 65.22	67.28	dlg	Doronjo	それじゃあ、いよいよなのかい?
 67.80	70.92	dlg	Boyacky	お待たせいたしました。準備は整いましたです、はい。
 71.40	73.52	dlg	Doronjo	あぁ、待ちかねたよ。	was: 私を待ちかねた; pass 1 歳を持ちかねた
 74.00	78.74	dlg	Doronjo	今度こそ完全勝利で、メッタメタのギッタギタにやってやろうじゃないか!	was: めーためたのギータギタ
-78.74	80.08	dlg	Boyacky+Tonzura	アラホラサッサー!	catchphrase; was: アルフォーレキャッシュ
+78.74	80.08	dlg	Boyacky+Tonzra	アラホラサッサー!	catchphrase; was: アルフォーレキャッシュ

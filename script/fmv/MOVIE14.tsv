@@ -14,7 +14,7 @@ start	end	form	speaker	jp	note
 51.08	52.76	dlg	Doronjo	おふくろさん、出したかね?	?
 52.96	54.10	dlg	Mecha	おへぇー!
 56.64	58.56	dlg	Doronjo	さぁ、帰るとしますかね?
-68.02	69.24	dlg	Tonzura	なんや、なんやもん!	?
+68.02	69.24	dlg	Tonzra	なんや、なんやもん!	?
 69.24	70.36	dlg	Boyacky	痛い、痛い、痛い!
 70.36	70.88	dlg	Doronjo	やったく!	?
 72.32	73.30	dlg	?	効いたぁ!	?
@@ -26,11 +26,11 @@ start	end	form	speaker	jp	note
 86.72	90.84	dlg	Yatterman 1	お前らが勝てば、影の黒幕ドクロベーが姿を現すと思ってな!	was: 影の持つドクノベイ
 91.46	92.42	dlg	Doronjo	本当かよ!
 92.64	93.90	dlg	Boyacky	嘘だよ!嘘!	? was: 凄いよ!凄い/すごーよすげー
-94.14	95.48	dlg	Tonzura	負け惜しみまんねん!	was: 万年
+94.14	95.48	dlg	Tonzra	負け惜しみまんねん!	was: 万年
 96.22	96.90	dlg	Yatterman 2	本当よ!
 97.00	100.18	dlg	Yatterman 2	ほら、ヤッターワンFZもピンピンしてるでしょ!
 100.60	101.24	dlg	Doronbow	えぇ!?
-101.74	103.70	dlg	Yatter-Wan	わおぉぉぉ!
+101.74	103.70	dlg	Yatterwan	わおぉぉぉ!
 105.02	108.52	dlg	Yatterman 1	しかしお前たちがドクロベーをやっつけるとは思わなかったよ
 108.52	112.14	dlg	Yatterman 1	それに免じて今回はこれで勘弁しといてやるよ
 112.14	114.78	dlg	Yatterman 2	これを機に心を入れ替えなさいね

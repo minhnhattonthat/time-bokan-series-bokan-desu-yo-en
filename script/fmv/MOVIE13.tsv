@@ -1,27 +1,27 @@
 start	end	form	speaker	jp	note
-3.00	5.46	dlg	Dokurobee	よくやったべ、お前たち
-5.46	11.52	dlg	Dokurobee	ヒーローが倒れた今、タイムボカンシリーズはわしのものだべ
+3.00	5.46	dlg	Dokurobey	よくやったべ、お前たち
+5.46	11.52	dlg	Dokurobey	ヒーローが倒れた今、タイムボカンシリーズはわしのものだべ
 12.16	16.10	dlg	Doronjo	では、約束通り私たちを主役にしていただけるんですね
-16.10	18.62	dlg	Dokurobee	バカこくでねえ、スカポンタン	was: 赤ポンタン
-18.62	22.98	dlg	Dokurobee	お前らは用済みだ、主役はわし一人のものだべ
+16.10	18.62	dlg	Dokurobey	バカこくでねえ、スカポンタン	was: 赤ポンタン
+18.62	22.98	dlg	Dokurobey	お前らは用済みだ、主役はわし一人のものだべ
 23.42	25.66	dlg	Boyacky	ちょちょ、ちょっと待ちなよ、ドクちゃん
-25.66	27.70	dlg	Tonzura	話が違うまんねん	? was: 話が違うんだね
-27.70	32.88	dlg	Dokurobee	次回からはタイトル改めタイムドクロベーが始まる予定だべ
-32.88	36.72	dlg	Dokurobee	タイムドクロベー
+25.66	27.70	dlg	Tonzra	話が違うまんねん	? was: 話が違うんだね
+27.70	32.88	dlg	Dokurobey	次回からはタイトル改めタイムドクロベーが始まる予定だべ
+32.88	36.72	dlg	Dokurobey	タイムドクロベー
 34.00	38.00	caption	logo	タイムボカンシリーズ タイムドクロベー	times from 2 s sheets
-36.72	39.46	dlg	Dokurobee	出張な	? unclear
-40.02	43.46	dlg	Dokurobee	全国のちびっ子たちを楽しみに待ってるべ
+36.72	39.46	dlg	Dokurobey	出張な	? unclear
+40.02	43.46	dlg	Dokurobey	全国のちびっ子たちを楽しみに待ってるべ
 46.92	48.36	dlg	Doronjo	なんてこった
 48.88	52.10	dlg	Boyacky	これは明らかに裏切り行為ですよドロンジョ様
-52.10	55.34	dlg	Tonzura	わいは腹の虫が収まらないまんねん
+52.10	55.34	dlg	Tonzra	わいは腹の虫が収まらないまんねん
 56.00	60.24	dlg	Boyacky	こうなったらドクちゃんをやっつけて真の主役を勝ち取ってしまいましょう
 61.62	63.22	dlg	Doronjo	勝算はあるのかい、ボヤッキー	was: 賞賛
 64.48	66.66	dlg	Boyacky	この天才に不可能はありません
 67.00	69.92	dlg	Boyacky	ドクちゃんの一人や二人、朝飯前ですよ	was: 遊びしまえ
-69.92	72.52	dlg	Tonzura	そや、今のわいらは無敵です
+69.92	72.52	dlg	Tonzra	そや、今のわいらは無敵です
 72.52	74.00	dlg	Doronjo	わかったよ
 74.36	78.12	dlg	Doronjo	ドロンボーを怒らすとどうなるか目に物を見せてやろうじゃないか
 78.64	80.22	dlg	Boyacky	やりましょうドロンジョ様
-80.22	81.62	dlg	Tonzura	ドロンジョ様
+80.22	81.62	dlg	Tonzra	ドロンジョ様
 82.06	85.78	dlg	Doronjo	お前たち、ドクロベー秘密基地へ殴り込みだよ!
-86.24	88.30	dlg	Boyacky+Tonzura	アラホラサッサー!	catchphrase; pass 1 only: アガハザイス
+86.24	88.30	dlg	Boyacky+Tonzra	アラホラサッサー!	catchphrase; pass 1 only: アガハザイス

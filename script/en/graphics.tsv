@@ -75,8 +75,8 @@ extra.m12	Dokurobey's Betrayal
 extra.m13	The Good Guys Attack!
 extra.m14	Punishment Time!
 hud.gameover	Game Over
-hud.danger	Danger	tag
-hud.danger_c	Danger	tag
+hud.danger	Danger	hudplain	one ink: an outline turned it into a bar
+hud.danger_c	Danger	hudplain
 go.game	GAME		large banner; letter per quad in phase 7
 go.over_o	O		first letter of OVER, packed beside GAME; phase 7 may merge
 go.over	VER		rest of OVER

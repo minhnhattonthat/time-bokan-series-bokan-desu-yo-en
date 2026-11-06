@@ -32,7 +32,7 @@ def test_with_pixels_replaces_only_the_pixel_block():
 @pytest.fixture(scope="module")
 def built(tmp_path_factory):
     out = tmp_path_factory.mktemp("build")
-    build.build(out)
+    build.build(out, identity=True)
     return out / build.TRACK1
 
 
@@ -41,6 +41,20 @@ def test_identity_build_matches_the_dump(built):
     want = next(ln.split()[0] for ln in (ROOT / "rom.sha1").read_text(encoding="utf-8").splitlines() if build.TRACK1 in ln)
     with open(built, "rb") as f:
         assert hashlib.file_digest(f, "sha1").hexdigest() == want
+
+
+@needs_rom
+def test_english_build_changes_nothing_it_should_not(tmp_path_factory):
+    import build_check
+    out = tmp_path_factory.mktemp("english")
+    build.build(out, movies=False)
+    findings, summary = build_check.check(out)
+    assert not findings, "\n".join(findings[:20])
+    d = disc.Disc(str(out / build.TRACK1))
+    for path in ("/DATA/END_4.BIN", "/DATA/END_5.BIN", "/DATA/END_6.BIN"):  # no strip row hides under a kept area
+        t = tim.parse(d.read(path))
+        assert tim.pixels(t, d.read(path))[0] == 0  # the transparent pixel spare parts sample
+    d.f.close()
 
 
 @needs_rom

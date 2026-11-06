@@ -45,9 +45,9 @@ cfg.big3	SUBDATA/CONFIG02	160	48	64	16	menu	巨大メカ	state 3
 cfg.big4	SUBDATA/CONFIG02	0	80	64	16	menu	巨大メカ	state 4
 cfg.bomb4	SUBDATA/CONFIG02	0	96	80	16	menu	ドクロ爆弾	dim state
 cfg.shot4	SUBDATA/CONFIG02	0	112	56	16	menu	ショット	state 4
-cfg.back	SUBDATA/CONFIG02	92	82	58	28	button	戻る	cross mark; EXIT beside it is English
-cfg.select	SUBDATA/CONFIG02	2	130	60	28	button	選ぶ	d-pad mark
-cfg.ok	SUBDATA/CONFIG02	2	162	60	28	button	決定	circle mark
+cfg.back	SUBDATA/CONFIG02	95	88	33	16	button	戻る	hugs the word: cross mark and box stay; EXIT beside it is English
+cfg.select	SUBDATA/CONFIG02	8	136	34	16	button	選ぶ	hugs the word: d-pad mark and box stay
+cfg.ok	SUBDATA/CONFIG02	8	168	32	16	button	決定	hugs the word: circle mark and box stay
 cfg.stamp1	SUBDATA/CONFIG02	163	66	84	77	stamp	決	large stamp, flat
 cfg.stamp2	SUBDATA/CONFIG02	163	150	84	81	stamp	決	large stamp, shadow
 cfg.stamp3	SUBDATA/CONFIG02	74	151	86	89	stamp	決	large stamp, 3D

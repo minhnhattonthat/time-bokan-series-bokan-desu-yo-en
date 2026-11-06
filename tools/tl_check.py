@@ -11,6 +11,7 @@ from PIL import ImageFont
 
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "tools"))
+import credits
 import fmv_burn
 import gfx
 import gfx_script
@@ -18,7 +19,6 @@ import gfx_script
 EN = ROOT / "script" / "en"
 SKIP_FORMS = {"keep", "scribble", "credit"}
 ROLE_W, ROW_W = 112, 304  # cells.md: role at dx -120, name at dx 0, anchored at screen x 160; screen keeps 8 px each side
-CREDIT_ROOM = 12700  # END_4-6 packed at 14 px rows (11,160 px at 16 px rows in cells.md); glyphs are at most 12 tall
 LYRIC_W = 270
 MIN_SHOW = 1.2  # s: a short row stays up this long, unless the next row starts first
 SONG_SHOW = 5.0
@@ -72,7 +72,8 @@ def subs(movie, rows=None):
         limit = min(later) if later else end + MIN_SHOW
         end = max(end, min(start + MIN_SHOW, limit))
         out.append((start, end, r["en"]))
-    return out
+    # burn_movie shows the first match, so an overlap would only delay the next line
+    return [(s, min(e, out[i + 1][0]) if i + 1 < len(out) else e, t) for i, (s, e, t) in enumerate(out)]
 
 
 def lyric_lines(text, width=LYRIC_W):
@@ -131,7 +132,6 @@ def check_credits(terms, errors):
     en = table(EN / "credits.tsv")
     if [r["line"] for r in en] != [r["line"] for r in src]:
         errors.append("credits: line numbers differ from script/credits.tsv")
-    strips = set()
     for r, s in zip(en, src):
         where = f"credits {r['line']}"
         role, name = r["role"], r["name"]
@@ -143,8 +143,15 @@ def check_credits(terms, errors):
             errors.append(f"{where}: role {role!r} is {rw} px, room {ROLE_W}")
         if rw + nw + 8 > ROW_W:  # a long name slides left into a short or empty role's column; parts can be re-anchored
             errors.append(f"{where}: {role!r} {name!r} is {rw + nw + 8} px, room {ROW_W}")
-        strips.update(p for p in role.split("|") + [name] if p)
-    return sum(gfx.row_width(t, "credit") + 2 for t in strips)
+    if not (ROOT / "rom" / credits.TRACK1).exists():
+        return "not packed: no dump"
+    try:
+        credits.edit_overlay(credits.overlay())  # the real pack, parts and page layout
+        placed, height = credits.pack()
+    except ValueError as e:
+        errors.append(f"credits: {e}")
+        return "over"
+    return ", ".join(f"{f[-5:]} {max(p.v for p in s.values()) // height + 1} rows" for f, s in sorted(placed.items()))
 
 
 def check_fmv(terms, errors, warnings):
@@ -165,7 +172,10 @@ def check_fmv(terms, errors, warnings):
                 elif not any("?" in src[n - 1][4] + notes(movie, n) for n in ns):
                     errors.append(f"{where}: dropped, but the source row isn't marked uncertain")
                 continue
-            check_term(where, "".join(src[n - 1][4] for n in ns), r["en"], terms, errors)
+            jp = "".join(src[n - 1][4] for n in ns)
+            check_term(where, jp, r["en"], terms, errors)
+            if "様" in jp and "-sama" not in r["en"]:  # D1 keeps honorifics; ちゃん and さん hit too many other words to test
+                errors.append(f"{where}: {jp!r} has 様, English has no -sama: {r['en']!r}")
             lines = fmv_burn.wrap(r["en"], font)
             if max(font.getlength(ln) for ln in lines) > fmv_burn.MAX_W or len(lines) > fmv_burn.MAX_LINES:
                 errors.append(f"{where}: {len(lines)} lines or over {fmv_burn.MAX_W} px: {r['en']!r}")
@@ -210,19 +220,17 @@ def run():
     errors, warnings = [], []
     terms = glossary()
     check_graphics(terms, errors)
-    px = check_credits(terms, errors)
+    packed = check_credits(terms, errors)
     check_fmv(terms, errors, warnings)
     check_lyrics(terms, errors)
-    if px > CREDIT_ROOM:
-        errors.append(f"credits: {px} px of strips, room {CREDIT_ROOM}")
-    return errors, warnings, px
+    return errors, warnings, packed
 
 
 if __name__ == "__main__":
-    errs, warns, width = run()
+    errs, warns, packed = run()
     for w in warns:
         print("warn:", w)
     for e in errs:
         print("ERROR:", e)
-    print(f"{len(errs)} errors, {len(warns)} warnings; credit strips {width}/{CREDIT_ROOM} px")
+    print(f"{len(errs)} errors, {len(warns)} warnings; credit strips {packed}")
     sys.exit(1 if errs else 0)

@@ -1,6 +1,6 @@
-# Translator brief - <Game title> (<platform>, <year>)
+# Translator brief - Time Bokan Series: Bokan desu yo (PS1, 1998)
 
-You translate part of the Japanese script of <Game> into English for a fan patch. <One line on genre, tone, protagonist.>
+You translate part of the Japanese script of Time Bokan Series: Bokan desu yo into English for a fan patch. A vertical shooter parody: the Doronbow trio and their boss Dokurobey, slapstick throughout.
 Work only on the batches named in your dispatch, one at a time in the order given, each to a passing check before the next. Do all translation yourself; do not dispatch subagents.
 
 ## Read first
@@ -18,7 +18,7 @@ use neighbours for context. Some lines are fragments of one sentence split by ef
 the English, no Japanese or fullwidth characters, no `\uXXXX`. Write `\n` only where a break must fall (rare).
 
 ## Validate
-Run `python -X utf8 tools/batches.py check <batch>` from the repo root and fix every reported id until it prints OK.
+Run `python -X utf8 tools/tl_check.py` from the repo root and fix every reported id until it prints OK.
 
 ## Style
 - Faithful: keep the information and order of ideas; adapt idiom, not meaning. Don't add details the Japanese doesn't
@@ -27,12 +27,12 @@ Run `python -X utf8 tools/batches.py check <batch>` from the repo root and fix e
   old men's じゃ/のう/わし ("eh?", "my boy", "back in my day"), rough men's ぜ/ねぇ/っス ("ain't", "ya", "dammit",
   clipped grammar), feminine かしら/わよ/のね ("I wonder...", "you know", "dear"), whines and drawls (〜ぅ/なぁ:
   "but Mooom", stretched words). A line any speaker could have said is a mistake.
-- Use names and terms exactly as in the glossary. <Abbreviation ruling; default: never abbreviate to fit.> If a line can't fit the limit without
+- Use names and terms exactly as in the glossary. Never abbreviate to fit; report it instead. If a line can't fit the limit without
   losing meaning, keep the meaning and report it as `LONG: id`.
-- Honorifics / name order: <project ruling>. Punctuation: 「」 -> "...", ・・・ -> `...`, ！？ -> `!?`, <more>.
+- Honorifics / name order: keep honorifics, hyphenated; Western name order (D1). Punctuation: 「」 -> "...", ・・・ -> `...`, ！？ -> `!?`.
 - Placeholders/control codes: copy every one exactly; no suffixes glued to a variable (write "No. [n]" not "[n]th"),
   no a/an right before a name variable.
-- <Concrete mistakes from earlier reviews, added as batches progress.>
+- Boyacky's ボクちゃん is always "little ol' me" (or "little ol' us"): flattening it was a review finding. Use American words: "bunch", not "lot".
 
 ## Consistency
 Never edit `glossary.md`. For a recurring name or term not in it, pick a form, use it consistently, and report it.

@@ -1,13 +1,13 @@
 start	end	form	speaker	jp	note
-3.92	8.76	dlg	Dokurobee	んほー!よくぞ特訓に耐えた!よって褒美をやるべ!
+3.92	8.76	dlg	Dokurobey	んほー!よくぞ特訓に耐えた!よって褒美をやるべ!
 9.14	11.48	dlg	Doronjo	ははー!ありがたき幸せ!
 11.82	15.02	dlg	Boyacky	ドロンジョ様、どうせろくなものじゃありませんよ
-15.02	17.42	dlg	Tonzura	爆弾とかは嫌でまんねん
-36.32	39.28	dlg	Dokurobee	わしのビューチフルな顔をモチーフにした
-39.28	41.36	dlg	Dokurobee	その名もドクロベーカーだべ
-41.36	43.38	dlg	Dokurobee	大事に使うがいいべ
+15.02	17.42	dlg	Tonzra	爆弾とかは嫌でまんねん
+36.32	39.28	dlg	Dokurobey	わしのビューチフルな顔をモチーフにした
+39.28	41.36	dlg	Dokurobey	その名もドクロベーカーだべ
+41.36	43.38	dlg	Dokurobey	大事に使うがいいべ
 43.38	46.10	dlg	Boyacky	うわぁなんだか使いたくないデザインですね
-46.10	48.32	dlg	Tonzura	ほんま爆弾より嫌や
+46.10	48.32	dlg	Tonzra	ほんま爆弾より嫌や
 48.32	51.60	dlg	Doronjo	シッ、ここは素直に喜んどくんだよ	was: すっか
 52.88	55.24	dlg	Doronjo	それじゃあ、このニューマシンで出撃だよ
-55.88	57.14	dlg	Boyacky+Tonzura	アラホラサッサー!	catchphrase; was: アロハロシャンス
+55.88	57.14	dlg	Boyacky+Tonzra	アラホラサッサー!	catchphrase; was: アロハロシャンス

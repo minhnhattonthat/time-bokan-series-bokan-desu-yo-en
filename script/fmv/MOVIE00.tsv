@@ -3,5 +3,5 @@ start	end	form	speaker	jp	note
 1.94	3.40	dlg	?	ボカンですよ!	title call
 4.00	12.00	caption	logo	タイムボカンシリーズ ボカンですよ	logo stays Japanese, D5; times from 2 s sheets
 12.00	54.00	song	opening		burned-in lyric captions; text local only, D8
-62.16	65.88	dlg	Dokurobee	提供はバンプレストでお送りするべ
-65.88	69.60	dlg	Dokurobee	最後まで見ないとお仕置きだべ
+62.16	65.88	dlg	Dokurobey	提供はバンプレストでお送りするべ
+65.88	69.60	dlg	Dokurobey	最後まで見ないとお仕置きだべ
