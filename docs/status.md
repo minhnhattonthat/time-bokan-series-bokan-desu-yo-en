@@ -37,7 +37,7 @@ Updated at the end of every session. Keep it to what the next session needs; his
   - Review: `codex exec` hit its usage limit (reset 2026-11-11), so the graphics rows' crops and the FMV files were re-read by the same agent in a later read-only pass, not independently. That pass found オ of オーバー packed in the ゲーム tile (row `go.over_o` added). A coverage script listed every raw Whisper row with no cleaned row.
 - **Next:** phase 9, on this build unless a fix forces a rebuild (a rebuild needs a new tour: the gate records the hash).
   1. Story pass: `tools/pairs.py`, then a verdict per chapter; `qa_gate.py check work/qa/story/manifest.tsv ...` must exit 0. Try `codex exec` for an independent read if the limit has reset (2026-11-11).
-  2. `docs/polish.md`: 11 lines are unticked. They ask for an ear-check or an official credit that nobody here can provide, so waive each with its reason unless a source turns up.
+  2. `docs/polish.md`: 12 lines are unticked. They ask for an ear-check or an official credit that nobody here can provide, so waive each with its reason unless a source turns up.
   3. Write `tools/release.py` (`references/pipeline.md` §Release): xdelta3 `-B` for Track 01, re-apply check, README with hashes, zip of patch + README. Add its command to `AGENTS.md`. `jp_left.py` has no text bytes to scan here, so decide what stands in for it and say so. Never run `gh release create`.
   4. Phase 7's rough spots, ruled: THE END gaps fixed. Credit text stays, as its colours are the game's and it reads at full size. `title.copy` is pale as in the original.
 - **Later phases, what differs here:** no script bytes exist.
