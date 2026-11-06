@@ -9,7 +9,8 @@ read by raw pixel index: no Japanese in it.
 FMVs: `tools/str_frames.py` sampled one frame every 5 s of each movie (187 frames). A caption shorter than 5 s can be
 missed, so phase 6 must watch each movie in full.
 
-Tour: only the logo and title screen were toured (`work/qa/menu`). The phase 8 warp tour must confirm each row in game.
+Tour: phase 2 scenes reach every screen class (`docs/re/state.md`). The phase 8 warp tour must still confirm each row in a zoomed shot.
+Ship name tags show on the ship zoom after picking (`ship<game>_<cell>` scenes). Lyric cards are in the `sound` scene, and the Extras list needs L1+R1 held on entering Options.
 
 Readings are by eye from zoomed sheets. Kanji marked (?) need a second look in phase 4.
 
@@ -68,6 +69,13 @@ Checked, no Japanese: `OPTI/M_BOTAN`, `OMAKE2`, `OMAKE3`, `SUBDATA/MARK01-03`, `
 | `STAGE3/DATA/ST3_S5D` | はらわた (on a monitor) |
 | `STAGE4/BG/ST4_SB0` | イタだきまん (banner, split across tiles) |
 | `STAGE7/BG/ST7_SA0` | sign 私有地・立入禁止, ドロンカンパニー (?) |
+
+Seen in game (phase 2): the `ST4_SB0` name on a walking enemy (`sprite_itadaki`, the text is イタだきまん in red), and the
+`ST7_SA0` sign on a fence at the start of the final stage (`play_stf`). **Not yet seen:** 怒 and はらわた. Dense god-mode runs
+of Stage 3 found neither by template match (`tools/debug/find_sprite.py`: 怒 every 6 frames from 600 to about 4,700 and
+every 40 for the whole stage, CLUT 0; はらわた every 8 frames from 29,500 to the clear, CLUT 0, and every 40 for the whole
+stage, all CLUTs). A match can miss a scaled or tinted sprite, and they may need a boss state that god-mode fire does not
+trigger. Phase 8 must see them, or record them as unreached with the evidence.
 
 Developer scribbles on spare tiles, probably never shown (confirm in phase 8): `ST2_C0` アコリ (?), and non-Japanese A3,
 B2, B4, 5P, 5B and 0-4 marks in stage BG files. X-boxes and square grids are padding.
