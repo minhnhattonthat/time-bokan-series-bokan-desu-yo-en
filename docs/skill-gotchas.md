@@ -1,0 +1,2 @@
+references/emulator-qa.md: for a game whose text is all graphics, textcover.py still works: write one id per graphics row and log TEXT lines from GPU dumps (tools/row_cover.py here). Movie subtitles are cheaper to check by decoding one frame per line from the disc image (tools/fmv_sheet.py) than by emulator shots.
+references/graphics.md: a pixel check inside declared rects cannot see text left just outside them; also search a ring around each rect for the row's ink, with an allow-list for art (tools/build_check.py leftovers).

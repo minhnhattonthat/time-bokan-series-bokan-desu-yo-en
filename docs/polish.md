@@ -14,7 +14,7 @@ run while a line is unticked.
 - [ ] Credit readings not confirmed by a source: lines 23, 25, 26, 27, 34, 62, 73. Check against an official credit or waive.
 - [ ] Credit line 55 - "Bokan Birth" for ボカンと出産 keeps the joke only half; a better nickname if one comes up.
 - [x] MOVIE05.1 - "Yatterman duo": fixed, Tatsunoko's own Yatterman page says "The Yatterman duo".
-- [ ] `sprite.sign2` "Doron Company" - reading of the sign is uncertain; check a zoomed shot in phase 8.
+- [x] `sprite.sign2` "Doron Company": zoomed crop reads ドロンカンパニー as far as 4 px tall text allows. Kept.
 - [ ] MOVIE00.1, 01.14, 01.18, 04.1, 05.14, 05.15, 06.7, 07.8, 13.7 - also marked `?` in the source. MOVIE04.1 most of all: raw reading こりゃいけません is the reverse of the corrected こりゃいけまっせ. Ear-check, or waive.
 - [ ] Credit line 51 (荘埜(らい)毅明) - kanji and readings uncertain. Check against an official credit or waive.
 - [x] `sprite.sign2` overruns its quad at x=116: fixed, `gfx.widened` keeps it inside the quad.

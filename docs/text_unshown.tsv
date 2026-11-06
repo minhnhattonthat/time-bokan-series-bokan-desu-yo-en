@@ -1,0 +1,39 @@
+# Graphics rows no GPU dump shows drawn, for textcover.py. All are English in the built TIMs: work/qa/tsheets/rows_unshown_sheet.png.
+title.desc6a	on screen: "Set" in the menu's Options description (menu_sheet); the row was split after prims could match it
+title.desc6b	on screen: "things" in the menu's Options description (menu_sheet); the row was split after prims could match it
+title.hint_select	no state found across 74 scenes; a plain strip beside the description cells, probably unused; crop is English
+title.hint_ok	no state found across 74 scenes; a plain strip beside the description cells, probably unused; crop is English
+title.hint_back1	no state found across 74 scenes; a plain strip beside the description cells, probably unused; crop is English
+title.hint_back2	no state found across 74 scenes and no cell part uses it; crop is English
+opt.player1	no state found across 74 scenes and no cell part uses it; crop is English
+opt.pad	no state found across 74 scenes and no cell part uses it; crop is English
+cfg.big2	buttons_edit cycles the action labels, but the dumps can't tell which strip a row drew; crop is English
+cfg.big3	buttons_edit cycles the action labels, but the dumps can't tell which strip a row drew; crop is English
+cfg.big4	buttons_edit cycles the action labels, but the dumps can't tell which strip a row drew; crop is English
+cfg.bomb1	buttons_edit cycles the action labels, but the dumps can't tell which strip a row drew; crop is English
+cfg.bomb3	buttons_edit cycles the action labels, but the dumps can't tell which strip a row drew; crop is English
+cfg.bomb4	buttons_edit cycles the action labels, but the dumps can't tell which strip a row drew; crop is English
+cfg.shot2	buttons_edit cycles the action labels, but the dumps can't tell which strip a row drew; crop is English
+cfg.shot3	buttons_edit cycles the action labels, but the dumps can't tell which strip a row drew; crop is English
+cfg.shot4	buttons_edit cycles the action labels, but the dumps can't tell which strip a row drew; crop is English
+cfg.back	no state found in the button config, which shows EXIT; crop is English
+cfg.stamp1	on screen: the OK stamp in buttons_edit, 1P; the dump's quad isn't matched to this rect
+cfg.stamp2	on screen as the same OK stamp family in buttons_edit; which strip draws for 2P wasn't separated; crop is English
+cfg.stamp3	on screen as the same OK stamp family in buttons_edit; which strip draws wasn't separated; crop is English
+plate.dokuro	the Dokurobey Car is in neither ship grid's 9 cells in the tour; crop is English
+sel.repair	shown for a ship not available; no state found that does this, in either ship grid; crop is English
+extra.m14	on screen: the last row of the Extras list when scrolled (extras_sheet_2); the dump shots missed it
+hud.danger_c	no state found: the danger scene draws hud.danger only; crop is English
+tag.doron	the name tag under the ship art: every ship grid shot shows the plate instead, so probably unused; crop is English
+tag.boya	the name tag under the ship art: every ship grid shot shows the plate instead, so probably unused; crop is English
+tag.tonzr	the name tag under the ship art: every ship grid shot shows the plate instead, so probably unused; crop is English
+tag.denden	the name tag under the ship art: every ship grid shot shows the plate instead, so probably unused; crop is English
+tag.andoro	the name tag under the ship art: every ship grid shot shows the plate instead, so probably unused; crop is English
+tag.dokurobe	the name tag under the ship art: every ship grid shot shows the plate instead, so probably unused; crop is English
+tag.gaikotu	the name tag under the ship art: every ship grid shot shows the plate instead, so probably unused; crop is English
+tag.rakuda	the name tag under the ship art: every ship grid shot shows the plate instead, so probably unused; crop is English
+tag.syareko	the name tag under the ship art: every ship grid shot shows the plate instead, so probably unused; crop is English
+tag.sya_bagi	the name tag under the ship art: every ship grid shot shows the plate instead, so probably unused; crop is English
+sprite.harawata	a stage 3 monitor sprite; not caught in the 170-frame tour shots of tour_st3; crop is English
+sprite.itadaki2	no cell part uses it; itadaki1 is the one seen on the enemy; crop is English
+sprite.itadaki3	no cell part uses it; itadaki1 is the one seen on the enemy; crop is English
