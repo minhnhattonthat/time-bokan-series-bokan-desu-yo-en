@@ -47,7 +47,7 @@ Updated at the end of every session. Keep it to what the next session needs; his
 - **What differs here:** no script bytes exist.
   - Edit CLUT indices through `tim.with_pixels`, since `to_image` drops the STP bit. After a text edit, `build.py --no-movies` is a quick check, but it leaves the movies Japanese; a release needs the full build.
 - **Open bugs:** none. One graphics row not yet seen in game: はらわた (`ST3_S5D`), see `docs/re/graphics.md`. PCSX-Redux once exited 0xC0000374 (heap corruption) as a run ended, after a complete log and final shot (38,000-frame tour); the same scene had passed at other settings, so treat that exit code as a flake and rerun.
-- **Next:** the v1.0 zip predates D14 (title menu description font), so rerun `tools/release.py` before publishing. `button`, `plate`, `sprite`, `tag` and `credit` are also off their fonts' pixel grids; not changed.
+- **Next:** the v1.0 zip predates D14 (title menu description font) and D15 (FMV subtitle font), so the movie QA sheets need a new read, then rerun `tools/release.py` before publishing. `button`, `plate`, `sprite`, `tag` and `credit` are also off their fonts' pixel grids; not changed.
 - **Waiting on the user:** all non-blocking, each this run's default, not an owner ruling.
   - D10: lyric cards get an English title and a short summary, not line-by-line translations, because the songs are third-party. Lyric captions burned into the opening and ending movies stay Japanese. Say if you want full lyric translations.
   - D11: official names mean subtitles say "Tonzra" and "Rescueman" where the voice says "Tonzura" and "Otasukeman". Yattodetaman keeps its name, though Tatsunoko's English title is Firebird.

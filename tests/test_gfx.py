@@ -224,9 +224,9 @@ def test_budgets_cover_rows():
 def test_balance_leaves_no_lone_last_word():
     from PIL import ImageFont
     font = ImageFont.truetype(str(fmv_burn.FONT), fmv_burn.SIZE)
-    text = "Still, don't let your guard down, you two."
+    text = "Still, I never thought you'd actually beat Dokurobey."
     greedy = fmv_burn.wrap(text, font)
-    assert greedy[-1] == "two."
+    assert greedy[-1] == "Dokurobey."
     lines = fmv_burn.balance(greedy, font)
     assert " ".join(lines) == text and len(lines) == 2 and len(lines[1].split()) > 1
     assert all(font.getlength(ln) <= fmv_burn.MAX_W for ln in lines)
@@ -239,4 +239,4 @@ def test_subtitle_wraps_to_width():
     lines = fmv_burn.wrap(fmv_burn.MARKER, font)
     assert len(lines) >= 2 and all(font.getlength(ln) <= fmv_burn.MAX_W for ln in lines)
     ink, halo = fmv_burn.text_masks(lines[:2], 288, 192)
-    assert ink.any() and (halo | ink).sum() == halo.sum()  # the halo covers the ink
+    assert ink.any() and (halo[ink > 0.5] > 0.9).all()  # the halo backs the ink

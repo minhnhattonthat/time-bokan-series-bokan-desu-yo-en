@@ -10,16 +10,17 @@ import sys
 from pathlib import Path
 
 import numpy as np
-from PIL import Image, ImageDraw, ImageFont
+from PIL import Image, ImageDraw, ImageFilter, ImageFont
 
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "tools"))
 import disc
 import mdec
 
-FONT = ROOT / "fonts" / "Jersey10-Regular.ttf"
-SIZE = 20          # 10 px design size, doubled: the cleanest size of this pixel font that reads on a TV
-LINE = 16
+FONT = ROOT / "fonts" / "LiberationSerif-Bold.ttf"
+SIZE = 13
+LINE = 15
+BLACK, WHITE = -112.0, 107.0  # luma of the halo and the ink
 MAX_W = 272        # picture is 288 wide, keep 8 px each side
 MAX_LINES = 3      # at LINE px each, the most the marker build showed clear of the picture's top half
 BOTTOM = 188       # last text row inside the 192-line picture
@@ -55,22 +56,20 @@ def balance(lines, font):
 
 
 def text_masks(lines, w, h):
-    """(ink, halo) boolean masks of the subtitle, drawn without antialiasing, centred, sitting on BOTTOM."""
+    """(ink, halo) 0-1 float masks of the subtitle: antialiased, centred, descenders ending on BOTTOM, with a soft dark
+    halo so it reads on any picture and a smooth edge costs few bits."""
     font = ImageFont.truetype(str(FONT), SIZE)
-    ink, halo = Image.new("1", (w, h)), Image.new("1", (w, h))
-    di, dh = ImageDraw.Draw(ink), ImageDraw.Draw(halo)
-    di.fontmode = dh.fontmode = "1"
-    top = BOTTOM - LINE * len(lines)
-    for n, ln in enumerate(lines):
-        x = (w - int(font.getlength(ln))) // 2
-        y = top + n * LINE - 4  # the font's ascent space
-        dh.text((x, y), ln, font=font, fill=1, stroke_width=1, stroke_fill=1)
-        di.text((x, y), ln, font=font, fill=1)
-    return np.array(ink), np.array(halo)
+    im = Image.new("L", (w, h))
+    d = ImageDraw.Draw(im)
+    baseline = BOTTOM - font.getmetrics()[1]
+    for n, ln in enumerate(reversed(lines)):
+        d.text(((w - int(font.getlength(ln))) // 2, baseline - n * LINE), ln, font=font, fill=255, anchor="ls")
+    spread = im.point(lambda v: 255 if v > 51 else 0).filter(ImageFilter.MaxFilter(5)).filter(ImageFilter.GaussianBlur(1.5))
+    return np.array(im) / 255.0, np.clip(np.array(spread) / 255.0 * 1.3, 0, 1)
 
 
 def burn_frame(p, ink, halo):
-    """Paint on Picture p: white ink, black halo, grey chroma under both."""
+    """Blend onto Picture p: the picture fades to black and grey under the halo, then white ink goes on top."""
     rows = np.flatnonzero(halo.any(axis=1))
     if not len(rows):
         return
@@ -81,12 +80,9 @@ def burn_frame(p, ink, halo):
                 continue
             i = ink[r * 16:r * 16 + 16, c * 16:c * 16 + 16]
             y, cb, cr = p.get_mb(c, r)
-            y[h] = -112.0
-            y[i] = 107.0
-            mask = h.reshape(8, 2, 8, 2).any(axis=(1, 3))
-            cb[mask] = 0.0
-            cr[mask] = 0.0
-            p.set_mb(c, r, y, cb, cr)
+            y = (y - BLACK) * (1 - h) + BLACK + i * (WHITE - BLACK)
+            keep = 1 - h.reshape(8, 2, 8, 2).mean(axis=(1, 3))
+            p.set_mb(c, r, y, cb * keep, cr * keep)
 
 
 def burn_movie(track, entry, movie, subs):

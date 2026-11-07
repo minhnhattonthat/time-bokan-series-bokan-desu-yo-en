@@ -67,5 +67,5 @@ CREDITS
 
 Translation and tools: minhnhattonthat, with extensive AI assistance (Claude by Anthropic), including the machine
 transcription of the movies. Corrections are very welcome.
-Fonts: Bangers, Jersey 10 and Jersey 15, under the SIL Open Font License 1.1.
+Fonts: Bangers, Jersey 10, Jersey 15 and Liberation Serif, under the SIL Open Font License 1.1.
 Time Bokan Series: Bokan desu yo is (c) Banpresto and Tatsunoko Production. This project is not affiliated with them.
