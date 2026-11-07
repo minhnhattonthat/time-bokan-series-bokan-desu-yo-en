@@ -1,7 +1,7 @@
 id	en	class	note
-title.normal	Normal Game
-title.special	Special Game
-title.options	Options
+title.normal	Normal Game	bar
+title.special	Special Game	bar
+title.options	Options	bar
 title.copy	(C) Tatsunoko Pro	sprite
 title.desc1	Evil power		Normal, line 1 of 4
 title.desc2	erupts!!		Normal, line 2

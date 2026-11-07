@@ -1,7 +1,7 @@
 id	file	rect	source	uv	screen
 title.normal	SUBDATA/TITLE3	33,40,112,17	quad	0,32,176,32	8,82
-title.special	SUBDATA/TITLE3	26,72,124,18	quad	0,64,176,32	8,114
-title.options	SUBDATA/TITLE3	48,104,82,18	quad	0,96,176,32	8,145;72,24
+title.special	SUBDATA/TITLE3	25,71,127,19	quad	0,64,176,32	8,114
+title.options	SUBDATA/TITLE3	48,103,82,19	quad	0,96,176,32	8,145;72,24
 title.copy	SUBDATA/TITLE3	96,16,76,16	quad	96,16,80,16	120,192
 title.desc1	SUBDATA/TITLE3	176,32,80,16	quad	176,32,79,16	208,98
 title.desc2	SUBDATA/TITLE3	176,48,64,16	quad	176,48,64,16	216,114

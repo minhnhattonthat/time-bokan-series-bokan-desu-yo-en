@@ -240,3 +240,25 @@ def test_subtitle_wraps_to_width():
     assert len(lines) >= 2 and all(font.getlength(ln) <= fmv_burn.MAX_W for ln in lines)
     ink, halo = fmv_burn.text_masks(lines[:2], 288, 192)
     assert ink.any() and (halo[ink > 0.5] > 0.9).all()  # the halo backs the ink
+
+
+def test_rectcover_finds_a_stroke_past_the_rect():
+    import rectcover
+    px = [[0] * 12 for _ in range(8)]
+    for j in range(2, 6):
+        px[j][4] = px[j][5] = 1  # a stroke inside the rect
+    px[1][5] = 1  # its dakuten, one row above the rect
+    px[3][10] = 1  # a separate neighbour: not the rect's text
+    assert rectcover.spill(px, (3, 2, 5, 4), pad=2) == (0, 0, 1, 0, False)
+    assert rectcover.spill(px, (3, 1, 5, 5), pad=2) == (0, 0, 0, 0, False)
+
+
+@pytest.mark.skipif(not (ROOT / "work" / "x").exists(), reason="needs tools/disc.py x output in work/x")
+def test_every_rect_covers_its_japanese():
+    import rect_spill
+    import rectcover
+    bad = [(i, r, s) for i, _, r, s in rect_spill.spills() if any(s[:4]) and not s[4] and i not in rect_spill.WAIVED]
+    assert not bad, f"rects leave Japanese behind (grow them, or waive after a look): {bad}"
+    data = (ROOT / "work" / "x" / "SUBDATA" / "TITLE3.BIN").read_bytes()
+    px = gfx.tim_px(tim.parse(data), data).tolist()
+    assert any(rectcover.spill(px, (26, 72, 124, 18))[:4])  # title.special before 2026-11-08 left its dakuten

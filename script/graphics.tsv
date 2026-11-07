@@ -1,7 +1,7 @@
 id	file	x	y	w	h	form	jp	note
 title.normal	SUBDATA/TITLE3	33	40	112	17	menu	ノーマルゲーム
-title.special	SUBDATA/TITLE3	26	72	124	18	menu	スペシャルゲーム
-title.options	SUBDATA/TITLE3	48	104	82	18	menu	オプション
+title.special	SUBDATA/TITLE3	25	71	127	19	menu	スペシャルゲーム	ス's edge on x 25, ペ's dakuten on y 71, ム's tail to x 151
+title.options	SUBDATA/TITLE3	48	103	82	19	menu	オプション	ブ's dakuten on y 103
 title.copy	SUBDATA/TITLE3	96	16	76	16	menu	©タツノコプロ	beside ©BANPRESTO; 1997 1998 stay
 title.desc1	SUBDATA/TITLE3	176	32	80	16	cells	悪玉パワー	16 px cells; joins title.desc2
 title.desc2	SUBDATA/TITLE3	176	48	64	16	cells	炸裂!!

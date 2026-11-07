@@ -19,6 +19,7 @@ KEEP_FORMS = {"keep"}
 # One font and size per label class (form column of graphics.tsv): (file in fonts/, size, 1 px outline)
 CLASSES = {
     "menu": ("Bangers-Regular.ttf", 16, True),
+    "bar": ("LiberationSans-Bold.ttf", 14, True),  # title menu bars: Bangers' slant and halo closed its counters
     "cells": ("Jersey10-Regular.ttf", 1400 / 75, False),  # native grid (upm/pixel): 20 px made strokes uneven
     "button": ("Jersey10-Regular.ttf", 20, False),
     "tag": ("Jersey10-Regular.ttf", 10, True),

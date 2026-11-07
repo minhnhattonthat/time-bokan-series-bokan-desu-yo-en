@@ -4,3 +4,5 @@ references/emulator-qa.md: inkbox.py prints left 0 right 0 and exits 0 when busy
 references/pipeline.md: release.py can use qa_gate.py waive for a text-only hotfix; decoding every movie with fmv_sheet.py and cmp against the toured sheets shows which movies changed, which proves more than a claim, and works even after the toured disc is overwritten.
 references/pipeline.md: stopping a full build part-way overwrites build/ in place, so copy the toured Track 01 aside before a rebuild if you want a file-by-file diff against it.
 references/pipeline.md: for an xdelta3 disc patch, burned-in FMV subtitles rewrite most movie sectors: 75,967 changed sectors gave a 132 MB patch of a 349 MB track.
+references/graphics.md: a clear rect drawn by eye 1-2 px short left ペ/ブ dakuten and ム's tail as stray pixels on the title bars; new scripts/rectcover.py finds it (copied to tools/, run by tests/test_gfx.py via tools/rect_spill.py). Packed atlases give neighbour false alarms: 13 here, all waived after a look.
+references/graphics.md: Jersey 10 at 20 px (off its 18.67 px grid) gave uneven strokes; Bangers 16 with a 1 px outline garbled small menu bars. Rules added to §Lettering.
