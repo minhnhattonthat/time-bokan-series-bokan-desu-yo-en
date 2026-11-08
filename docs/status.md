@@ -2,8 +2,8 @@
 
 Updated at the end of every session. Keep it to what the next session needs; history is in git.
 
-- **Phase:** 9. Release built and verified, not published (publishing is the owner's call).
-- **Release v1.0 (2026-11-07):**
+- **Phase:** 9, published 2026-11-08 (D17): repo public, https://github.com/minhnhattonthat/time-bokan-series-bokan-desu-yo-en/releases/tag/v1.0. Player bug reports come as GitHub issues.
+- **Release v1.0 (2026-11-07, published 2026-11-08):**
   - Rebuilt with D14, D15 and D16; the v1.0 zip was never published, so it was replaced. A visual-qa agent read all 16 movies' subtitle sheets and `menu_sheet`; it caught MOVIE14 5-6 no longer hiding the burned-in credit, reworded. Stages and other menus not re-toured, so the visual gate still passes on a waiver.
   - `release/Time_Bokan_Bokan_desu_yo_EN_v1.0.zip`, 129,795,047 bytes, stored: xdelta3 patch of Track 01 plus `README.txt`. Playable image in `build/`. Patched Track 01: SHA-1 1fa3d1410237f3937905def850171db55ee3cbee. `release.py` applied the patch to the clean dump and the result matches the build's SHA-1. Local and gitignored.
   - `tools/release.py --no-build` exit 0, right after a full build of the same text: `check` 52 passed, `build_check` 0 findings (75,967 sectors in 52 files and 16 movies), smoke ok, `jp_left.py --sjis` 0 runs on all 12 program files (D12), both QA gates pass, `textcover.py` 70 shown and 38 waived, no unticked polish line, no README placeholder.
